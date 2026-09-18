@@ -634,7 +634,7 @@ export default function AdminDashboardPage() {
     if (!editingDomain?.name) return;
     soundFx.playClick();
     const domainToSave: AIDomain = {
-      id: editingDomain.id || `domain-${Date.now()}`,
+      id: (editingDomain.id || `domain-${Date.now()}`) as AIDomain['id'],
       name: editingDomain.name,
       shortDesc: editingDomain.shortDesc || '',
       fullDesc: editingDomain.fullDesc || '',
@@ -730,7 +730,7 @@ export default function AdminDashboardPage() {
     const achievementToSave: Achievement = {
       id: editingAchievement.id || `ach-${Date.now()}`,
       title: editingAchievement.title,
-      category: editingAchievement.category || 'Hackathon',
+      category: editingAchievement.category || 'Hackathon Win',
       year: editingAchievement.year || String(new Date().getFullYear()),
       description: editingAchievement.description || '',
       issuer: editingAchievement.issuer || '',
@@ -2127,7 +2127,7 @@ export default function AdminDashboardPage() {
                     <input
                       type="text"
                       value={editingProject.category || ''}
-                      onChange={e => setEditingProject({ ...editingProject, category: e.target.value })}
+                      onChange={e => setEditingProject({ ...editingProject, category: e.target.value as any })}
                       placeholder="Computer Vision"
                       className="w-full bg-slate-950 border border-slate-700 rounded-xl p-2.5 text-white"
                     />
@@ -2987,7 +2987,7 @@ export default function AdminDashboardPage() {
                 type="button"
                 onClick={() => {
                   soundFx.playClick();
-                  setEditingAchievement({ title: '', category: 'Hackathon', year: String(new Date().getFullYear()), description: '', issuer: '', badgeIcon: 'Trophy' });
+                  setEditingAchievement({ title: '', category: 'Hackathon Win', year: String(new Date().getFullYear()), description: '', issuer: '', badgeIcon: 'Trophy' });
                 }}
                 className="px-4 py-2 rounded-xl bg-yellow-500 hover:bg-yellow-400 text-slate-950 font-black text-xs transition-all flex items-center gap-1.5 cursor-pointer"
               >
