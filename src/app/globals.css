@@ -1,0 +1,138 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-space: #050816;
+    --bg-surface: #0b1020;
+    --bg-card: rgba(11, 16, 32, 0.75);
+    --border-glow: rgba(0, 207, 255, 0.2);
+    --cyan-core: #00cfff;
+    --purple-core: #6c63ff;
+    --violet-core: #9b5cff;
+    --text-primary: #f5f7ff;
+    --text-secondary: #94a3b8;
+  }
+
+  * {
+    border-color: rgba(0, 207, 255, 0.15);
+  }
+
+  body {
+    background-color: #050816;
+    color: #f5f7ff;
+    font-family: var(--font-geist-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    selection-background-color: #00cfff;
+    selection-color: #050816;
+  }
+
+  ::selection {
+    background: #00cfff;
+    color: #050816;
+  }
+}
+
+/* Futuristic custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #050816;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #00cfff, #6c63ff);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #00f5d4, #9b5cff);
+}
+
+/* Glassmorphic Cyber Panels */
+.glass-panel {
+  background: rgba(11, 16, 32, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(0, 207, 255, 0.15);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.glass-panel-glow {
+  background: rgba(11, 16, 32, 0.8);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 207, 255, 0.35);
+  box-shadow: 0 0 25px rgba(0, 207, 255, 0.15), inset 0 0 15px rgba(0, 207, 255, 0.05);
+}
+
+.cyber-grid-bg {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(0, 207, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 207, 255, 0.05) 1px, transparent 1px);
+}
+
+.cyber-dots-bg {
+  background-size: 24px 24px;
+  background-image: radial-gradient(circle, rgba(0, 207, 255, 0.12) 1px, transparent 1px);
+}
+
+/* Glow Text & Elements */
+.text-glow-cyan {
+  text-shadow: 0 0 12px rgba(0, 207, 255, 0.6), 0 0 24px rgba(0, 207, 255, 0.3);
+}
+
+.text-glow-purple {
+  text-shadow: 0 0 12px rgba(155, 92, 255, 0.6), 0 0 24px rgba(155, 92, 255, 0.3);
+}
+
+.border-glow-cyan {
+  box-shadow: 0 0 15px rgba(0, 207, 255, 0.3);
+}
+
+/* Scanline Overlay */
+.scanline {
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0) 50%,
+    rgba(0, 207, 255, 0.04) 50%,
+    rgba(0, 207, 255, 0.04)
+  );
+  background-size: 100% 4px;
+}
+
+/* Radar / Pulse Animation */
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.05);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 3s ease-in-out infinite;
+}
+
+/* Monospace telemetry */
+.font-mono-code {
+  font-family: var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+/* Reduced motion respect */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
