@@ -91,7 +91,7 @@ export default function CommunitySection() {
         </div>
 
         {/* Social Grid */}
-        <div className="flex flex-col gap-2 rounded-2xl border border-white/10 bg-[#0b0b0b]/80 p-2 mb-10">
+        <div className="tabletop-surface grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 rounded-2xl border border-white/10 p-3 mb-10">
           {socials.map((soc, idx) => {
             const Icon = soc.icon;
             return (
@@ -106,7 +106,7 @@ export default function CommunitySection() {
                 transition={{ duration: 0.4, delay: idx * 0.1 }}
                 onMouseEnter={() => soundFx.playHover()}
                 onClick={() => soundFx.playClick()}
-                className={`p-3 sm:p-4 rounded-xl bg-[#151515]/90 border border-white/10 ${soc.glow} transition-colors duration-200 flex items-center gap-3 group`}
+                className={`tabletop-card p-4 rounded-xl bg-[#151515]/90 border border-white/10 ${soc.glow} transition-colors duration-200 flex flex-col justify-between gap-3 group min-h-48`}
               >
                 <div>
                   <div className="flex items-center justify-between mb-4">

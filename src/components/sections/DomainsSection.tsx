@@ -80,7 +80,7 @@ export default function DomainsSection() {
         </div>
 
         {/* 10 Domains 3D Glass Cards Grid */}
-        <div className="flex flex-col gap-2 rounded-2xl border border-white/10 bg-[#0b0b0b]/80 p-2">
+        <div className="tabletop-surface grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 rounded-2xl border border-white/10 p-3">
           {domains.map((domain, idx) => {
             const IconComponent = ICON_MAP[domain.iconName] || Cpu;
             return (
@@ -94,7 +94,7 @@ export default function DomainsSection() {
                 <div
                   onClick={() => handleOpenDomain(domain)}
                   onMouseEnter={() => soundFx.playHover()}
-                  className="h-full group cursor-pointer p-3 sm:p-4 rounded-xl bg-[#151515]/90 border border-white/10 hover:border-white/25 transition-colors duration-200 flex flex-row items-center gap-3"
+                  className="tabletop-card h-full min-h-40 group cursor-pointer p-3 sm:p-4 rounded-xl bg-[#151515]/90 border border-white/10 hover:border-white/25 transition-colors duration-200 flex flex-col justify-between gap-3"
                 >
                   <div>
                     {/* Icon & Active Count */}

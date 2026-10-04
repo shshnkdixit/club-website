@@ -97,7 +97,7 @@ export default function ProjectsSection() {
         </div>
 
         {/* Project Cards Grid */}
-        <div className="flex flex-col gap-2 rounded-2xl border border-white/10 bg-[#0b0b0b]/80 p-2">
+        <div className="tabletop-surface grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 rounded-2xl border border-white/10 p-3">
           {filteredProjects.map((project, idx) => (
             <motion.div
               key={project.id}
@@ -105,10 +105,10 @@ export default function ProjectsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: idx * 0.1 }}
-              className="group rounded-xl bg-[#151515]/90 border border-white/10 hover:border-white/25 transition-colors duration-200 flex flex-col sm:flex-row overflow-hidden cursor-pointer"
+              className="tabletop-card group rounded-xl bg-[#151515]/90 border border-white/10 hover:border-white/25 transition-colors duration-200 flex flex-col overflow-hidden cursor-pointer"
             >
               {/* Project Image & Interactive Simulator Banner */}
-              <div className="relative h-48 w-full overflow-hidden bg-slate-950">
+              <div className="relative h-36 w-full overflow-hidden bg-slate-950">
                 <img
                   src={project.image}
                   alt={project.title}

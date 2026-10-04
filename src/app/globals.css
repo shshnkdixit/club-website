@@ -128,6 +128,33 @@
   background: #5c5c5c;
 }
 
+/* Tabletop object layout: compact cards sit like physical objects on a dark desk. */
+.tabletop-surface {
+  perspective: 1400px;
+  transform-style: preserve-3d;
+  background: linear-gradient(145deg, rgba(24,24,24,.92), rgba(7,7,7,.96));
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.08), 0 24px 70px rgba(0,0,0,.35);
+}
+
+.tabletop-card {
+  transform: rotateX(1deg);
+  transform-origin: center bottom;
+  transition: transform 260ms cubic-bezier(.2,.8,.2,1), border-color 260ms ease, background 260ms ease, box-shadow 260ms ease;
+  box-shadow: 0 10px 18px rgba(0,0,0,.2), inset 0 1px 0 rgba(255,255,255,.04);
+}
+
+.tabletop-card:hover {
+  transform: translateY(-6px) rotateX(0deg) rotateZ(-.4deg);
+  background: #1b1b1b;
+  border-color: rgba(255,255,255,.3);
+  box-shadow: 0 18px 28px rgba(0,0,0,.36), inset 0 1px 0 rgba(255,255,255,.08);
+}
+
+@media (max-width: 640px) {
+  .tabletop-surface { perspective: 900px; }
+  .tabletop-card:hover { transform: translateY(-3px); }
+}
+
 /* Glassmorphic Cyber Panels */
 .glass-panel {
   background: rgba(12, 12, 12, 0.72);
