@@ -206,6 +206,29 @@
   font-family: var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 }
 
+@keyframes watch-shake {
+  0%, 100% { transform: translate3d(0, 0, 0) rotate(0deg); }
+  50% { transform: translate3d(0.5px, -0.5px, 0) rotate(0.4deg); }
+}
+
+@keyframes radar-sweep {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.radar-sweep {
+  animation: radar-sweep 7s linear infinite;
+}
+
+@keyframes radar-particle {
+  0%, 100% { opacity: 0.2; transform: scale(0.8); }
+  50% { opacity: 0.8; transform: scale(1.5); }
+}
+
+.radar-particle {
+  animation: radar-particle 3.5s ease-in-out infinite;
+}
+
 /* Reduced motion respect */
 @media (prefers-reduced-motion: reduce) {
   *, ::before, ::after {
