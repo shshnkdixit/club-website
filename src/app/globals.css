@@ -1,20 +1,84 @@
 @import "tailwindcss";
 
+/* Monochrome remap: the neon cyan/violet accents are mapped to a white-to-grey
+   scale so every existing utility (text-cyan-300, from-violet-500, ...) matches
+   the black theme without touching hundreds of class names. */
+@theme {
+  --color-cyan-50: #ffffff;
+  --color-cyan-100: #fafafa;
+  --color-cyan-200: #f5f5f5;
+  --color-cyan-300: #ededed;
+  --color-cyan-400: #e0e0e0;
+  --color-cyan-500: #bdbdbd;
+  --color-cyan-600: #8a8a8a;
+  --color-cyan-700: #5c5c5c;
+  --color-cyan-800: #2e2e2e;
+  --color-cyan-900: #1a1a1a;
+  --color-cyan-950: #0d0d0d;
+
+  --color-sky-50: #ffffff;
+  --color-sky-100: #fafafa;
+  --color-sky-200: #f2f2f2;
+  --color-sky-300: #e8e8e8;
+  --color-sky-400: #d6d6d6;
+  --color-sky-500: #b0b0b0;
+  --color-sky-600: #808080;
+  --color-sky-700: #545454;
+  --color-sky-800: #2b2b2b;
+  --color-sky-900: #181818;
+  --color-sky-950: #0c0c0c;
+
+  --color-teal-300: #e5e5e5;
+  --color-teal-400: #d4d4d4;
+  --color-teal-500: #a3a3a3;
+
+  --color-violet-50: #fafafa;
+  --color-violet-100: #f0f0f0;
+  --color-violet-200: #dcdcdc;
+  --color-violet-300: #c4c4c4;
+  --color-violet-400: #a8a8a8;
+  --color-violet-500: #8c8c8c;
+  --color-violet-600: #6b6b6b;
+  --color-violet-700: #4a4a4a;
+  --color-violet-800: #262626;
+  --color-violet-900: #161616;
+  --color-violet-950: #0a0a0a;
+
+  --color-purple-300: #c4c4c4;
+  --color-purple-400: #a8a8a8;
+  --color-purple-500: #8c8c8c;
+  --color-purple-600: #6b6b6b;
+  --color-purple-900: #161616;
+  --color-purple-950: #0a0a0a;
+
+  --color-indigo-300: #cfcfcf;
+  --color-indigo-400: #b3b3b3;
+  --color-indigo-500: #949494;
+  --color-indigo-600: #737373;
+  --color-indigo-900: #171717;
+  --color-indigo-950: #0b0b0b;
+
+  --color-fuchsia-300: #d1d1d1;
+  --color-fuchsia-400: #b8b8b8;
+  --color-fuchsia-500: #999999;
+  --color-fuchsia-950: #0b0b0b;
+}
+
 @layer base {
   :root {
     --bg-space: #000000;
     --bg-surface: #0a0a0a;
     --bg-card: rgba(10, 10, 10, 0.75);
-    --border-glow: rgba(0, 207, 255, 0.2);
-    --cyan-core: #00cfff;
-    --purple-core: #6c63ff;
-    --violet-core: #9b5cff;
+    --border-glow: rgba(255, 255, 255, 0.2);
+    --cyan-core: #ffffff;
+    --purple-core: #8a8a8a;
+    --violet-core: #a3a3a3;
     --text-primary: #f5f7ff;
     --text-secondary: #94a3b8;
   }
 
   * {
-    border-color: rgba(0, 207, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.15);
   }
 
   body {
@@ -23,12 +87,12 @@
     font-family: var(--font-geist-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     overflow-x: hidden;
     scroll-behavior: smooth;
-    selection-background-color: #00cfff;
+    selection-background-color: #ffffff;
     selection-color: #000000;
   }
 
   ::selection {
-    background: #00cfff;
+    background: #ffffff;
     color: #000000;
   }
 }
@@ -44,12 +108,12 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #00cfff, #6c63ff);
+  background: linear-gradient(180deg, #ffffff, #8a8a8a);
   border-radius: 9999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, #00f5d4, #9b5cff);
+  background: linear-gradient(180deg, #e5e5e5, #a3a3a3);
 }
 
 /* Glassmorphic Cyber Panels */
@@ -57,7 +121,7 @@
   background: rgba(10, 10, 10, 0.7);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(0, 207, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 }
 
@@ -65,33 +129,33 @@
   background: rgba(10, 10, 10, 0.8);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(0, 207, 255, 0.35);
-  box-shadow: 0 0 25px rgba(0, 207, 255, 0.15), inset 0 0 15px rgba(0, 207, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.15), inset 0 0 15px rgba(255, 255, 255, 0.05);
 }
 
 .cyber-grid-bg {
   background-size: 40px 40px;
   background-image: 
-    linear-gradient(to right, rgba(0, 207, 255, 0.05) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(0, 207, 255, 0.05) 1px, transparent 1px);
+    linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
 }
 
 .cyber-dots-bg {
   background-size: 24px 24px;
-  background-image: radial-gradient(circle, rgba(0, 207, 255, 0.12) 1px, transparent 1px);
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.12) 1px, transparent 1px);
 }
 
 /* Glow Text & Elements */
 .text-glow-cyan {
-  text-shadow: 0 0 12px rgba(0, 207, 255, 0.6), 0 0 24px rgba(0, 207, 255, 0.3);
+  text-shadow: 0 0 12px rgba(255, 255, 255, 0.6), 0 0 24px rgba(255, 255, 255, 0.3);
 }
 
 .text-glow-purple {
-  text-shadow: 0 0 12px rgba(155, 92, 255, 0.6), 0 0 24px rgba(155, 92, 255, 0.3);
+  text-shadow: 0 0 12px rgba(200, 200, 200, 0.6), 0 0 24px rgba(200, 200, 200, 0.3);
 }
 
 .border-glow-cyan {
-  box-shadow: 0 0 15px rgba(0, 207, 255, 0.3);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
 }
 
 /* Scanline Overlay */
@@ -100,8 +164,8 @@
     to bottom,
     rgba(255, 255, 255, 0),
     rgba(255, 255, 255, 0) 50%,
-    rgba(0, 207, 255, 0.04) 50%,
-    rgba(0, 207, 255, 0.04)
+    rgba(255, 255, 255, 0.04) 50%,
+    rgba(255, 255, 255, 0.04)
   );
   background-size: 100% 4px;
 }
