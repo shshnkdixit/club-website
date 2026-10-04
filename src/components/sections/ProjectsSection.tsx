@@ -58,7 +58,7 @@ export default function ProjectsSection() {
     ? projects
     : projects.filter((project) => project.category === selectedCategory);
 
-  const activeProject = selectedProject ?? filteredProjects[0] ?? null;
+  const activeProject = selectedProject;
   const visibleProjects = filteredProjects.slice(0, 6);
 
   const selectProject = (project: Project) => {
@@ -72,7 +72,7 @@ export default function ProjectsSection() {
   };
 
   return (
-    <section id="projects" className="relative overflow-hidden bg-transparent py-24 sm:py-32">
+    <section id="projects" className="relative overflow-hidden bg-transparent py-16 sm:py-24">
       <div className="pointer-events-none absolute inset-0 cyber-grid-bg opacity-20" />
       <div className="pointer-events-none absolute left-1/3 top-1/4 h-96 w-96 rounded-full bg-cyan-500/10 blur-[160px]" />
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -80,7 +80,7 @@ export default function ProjectsSection() {
           <div className="space-y-3">
             <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/30 bg-cyan-400/10 px-3 py-1 font-mono text-[11px] text-cyan-300">
               <Radio className="h-3.5 w-3.5 animate-pulse" />
-              <span>LIVE RESEARCH NETWORK / 06 NODES ONLINE</span>
+              <span>LIVE RESEARCH NETWORK</span>
             </div>
             <h2 className="text-3xl font-extrabold tracking-tight text-white sm:text-5xl">
               AUTONOMOUS <span className="bg-gradient-to-r from-cyan-300 via-violet-400 to-emerald-300 bg-clip-text text-transparent">PROJECTS</span>
@@ -106,14 +106,14 @@ export default function ProjectsSection() {
           ))}
         </div>
 
-        <div className="relative min-h-[520px] overflow-hidden rounded-[2rem] border border-cyan-400/20 bg-[#050b13]/90 shadow-[0_0_80px_rgba(0,207,255,0.06)]">
+        <div className="relative overflow-hidden rounded-[2rem] border border-cyan-400/20 bg-[#050b13]/90 shadow-[0_0_80px_rgba(0,207,255,0.06)]">
           <div className="absolute inset-0 opacity-40" style={{ backgroundImage: 'linear-gradient(rgba(0,207,255,.08) 1px, transparent 1px), linear-gradient(90deg, rgba(0,207,255,.08) 1px, transparent 1px)', backgroundSize: '48px 48px' }} />
           <div className="relative flex items-center justify-between border-b border-cyan-400/15 px-5 py-4 font-mono text-[10px] sm:px-8">
             <div className="flex items-center gap-3 text-cyan-300"><Target className="h-4 w-4" /> AUTONOMOUS MISSION CONTROL</div>
             <div className="hidden items-center gap-2 text-emerald-300 sm:flex"><span className="size-1.5 rounded-full bg-emerald-300" /> LIVE</div>
           </div>
 
-          <div className="relative h-[250px] sm:h-[290px]">
+          <div className="relative h-[220px] sm:h-[250px]">
             <svg className="pointer-events-none absolute inset-0 h-full w-full opacity-50" preserveAspectRatio="none" aria-hidden="true">
               <line x1="15%" y1="28%" x2="50%" y2="51%" stroke="#00cfff" strokeDasharray="5 8" />
               <line x1="43%" y1="18%" x2="50%" y2="51%" stroke="#9b5cff" strokeDasharray="5 8" />
