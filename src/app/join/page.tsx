@@ -182,7 +182,7 @@ export default function JoinPage() {
             className="space-y-8"
           >
             {/* Admissions Closed Cyberpunk Hero Card */}
-            <div className="p-8 sm:p-12 rounded-3xl bg-[#0B1020]/95 backdrop-blur-2xl border-2 border-rose-500/40 shadow-[0_0_60px_rgba(244,63,94,0.2)] text-center space-y-6">
+            <div className="p-8 sm:p-12 rounded-3xl bg-[#0a0a0a]/95 backdrop-blur-2xl border-2 border-rose-500/40 shadow-[0_0_60px_rgba(244,63,94,0.2)] text-center space-y-6">
               <div className="w-20 h-20 rounded-3xl bg-rose-500/20 border-2 border-rose-400 mx-auto flex items-center justify-center shadow-[0_0_35px_rgba(244,63,94,0.4)]">
                 <Lock className="w-10 h-10 text-rose-400 animate-pulse" />
               </div>
@@ -311,7 +311,7 @@ export default function JoinPage() {
                 initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.95 }}
-                className="p-6 sm:p-10 rounded-3xl bg-[#0B1020]/90 backdrop-blur-xl border border-cyan-500/30 shadow-[0_0_50px_rgba(0,207,255,0.15)]"
+                className="p-6 sm:p-10 rounded-3xl bg-[#0a0a0a]/90 backdrop-blur-xl border border-cyan-500/30 shadow-[0_0_50px_rgba(0,207,255,0.15)]"
               >
                 {/* Customizable Form Header */}
                 <div className="border-b border-cyan-500/20 pb-6 mb-8">
@@ -619,7 +619,7 @@ export default function JoinPage() {
                 key="confirmation"
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
-                className="p-8 sm:p-12 rounded-3xl bg-[#0B1020]/95 backdrop-blur-2xl border border-cyan-400 shadow-[0_0_60px_rgba(0,207,255,0.3)] text-center space-y-6"
+                className="p-8 sm:p-12 rounded-3xl bg-[#0a0a0a]/95 backdrop-blur-2xl border border-cyan-400 shadow-[0_0_60px_rgba(0,207,255,0.3)] text-center space-y-6"
               >
                 <div className="w-20 h-20 rounded-3xl bg-cyan-500/20 border-2 border-cyan-400 mx-auto flex items-center justify-center shadow-[0_0_30px_rgba(0,207,255,0.5)]">
                   <CheckCircle2 className="w-10 h-10 text-cyan-400 animate-bounce" />

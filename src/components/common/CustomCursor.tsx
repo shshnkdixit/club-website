@@ -64,7 +64,7 @@ export default function CustomCursor() {
           y: mousePosition.y - 3,
           width: 6,
           height: 6,
-          boxShadow: '0 0 10px #00CFFF, 0 0 20px #00CFFF'
+          boxShadow: '0 0 10px #FFFFFF, 0 0 20px #FFFFFF'
         }}
         transition={{ type: 'spring', damping: 40, stiffness: 600, mass: 0.1 }}
       />
@@ -77,9 +77,9 @@ export default function CustomCursor() {
           y: mousePosition.y - (cursorVariant === 'interact' ? 36 : cursorVariant === 'hover' ? 24 : 16),
           width: cursorVariant === 'interact' ? 72 : cursorVariant === 'hover' ? 48 : 32,
           height: cursorVariant === 'interact' ? 72 : cursorVariant === 'hover' ? 48 : 32,
-          borderColor: cursorVariant === 'interact' ? '#9B5CFF' : cursorVariant === 'hover' ? '#00F5D4' : 'rgba(0, 207, 255, 0.4)',
-          backgroundColor: cursorVariant === 'interact' ? 'rgba(155, 92, 255, 0.15)' : cursorVariant === 'hover' ? 'rgba(0, 245, 212, 0.08)' : 'rgba(0, 0, 0, 0)',
-          boxShadow: cursorVariant === 'interact' ? '0 0 20px rgba(155, 92, 255, 0.4)' : '0 0 8px rgba(0, 207, 255, 0.2)'
+          borderColor: cursorVariant === 'interact' ? '#8A8A8A' : cursorVariant === 'hover' ? '#D4D4D4' : 'rgba(255,255,255, 0.4)',
+          backgroundColor: cursorVariant === 'interact' ? 'rgba(160,160,160, 0.15)' : cursorVariant === 'hover' ? 'rgba(220,220,220, 0.08)' : 'rgba(0, 0, 0, 0)',
+          boxShadow: cursorVariant === 'interact' ? '0 0 20px rgba(160,160,160, 0.4)' : '0 0 8px rgba(255,255,255, 0.2)'
         }}
         transition={{ type: 'spring', damping: 25, stiffness: 250, mass: 0.2 }}
       >

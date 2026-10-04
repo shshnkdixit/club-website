@@ -16,7 +16,7 @@ export default function AboutSection() {
       subtitle: 'Foundations & Mathematical Intuition',
       desc: 'Master tensor mathematics, gradient calculus, backpropagation, and core machine learning paradigms through weekly peer-led workshops.',
       icon: BookOpen,
-      color: '#00CFFF',
+      color: '#FFFFFF',
       skills: ['Linear Algebra', 'PyTorch Basics', 'Gradient Descent', 'Statistical Learning']
     },
     {
@@ -24,7 +24,7 @@ export default function AboutSection() {
       subtitle: 'Simulations & Model Prototyping',
       desc: 'Form study squads to reproduce landmark AI papers, test custom loss functions, and benchmark algorithms on compute clusters.',
       icon: FlaskConical,
-      color: '#00F5D4',
+      color: '#D4D4D4',
       skills: ['Jupyter Workbenches', 'CUDA Optimization', 'Hyperparameter Tuning', 'WandB']
     },
     {
@@ -32,7 +32,7 @@ export default function AboutSection() {
       subtitle: 'Hardware & Edge Deployment',
       desc: 'Deploy deep vision models and kinematics control policies to NVIDIA Jetson edge micro-controllers and robotic platforms.',
       icon: Hammer,
-      color: '#6C63FF',
+      color: '#8A8A8A',
       skills: ['ROS2 Humble', 'TensorRT', 'Embedded C++', 'Micro-Sensors']
     },
     {
@@ -40,7 +40,7 @@ export default function AboutSection() {
       subtitle: 'Peer-Reviewed Scholarly Inquiry',
       desc: 'Collaborate with faculty mentors to author and publish novel findings in CVPR, ICRA, and NeurIPS student workshops.',
       icon: FileCode,
-      color: '#9B5CFF',
+      color: '#8A8A8A',
       skills: ['Paper Writing', 'LaTeX', 'Ablation Studies', 'Reproducibility']
     },
     {
@@ -48,7 +48,7 @@ export default function AboutSection() {
       subtitle: 'Hackathons & Startup Incubators',
       desc: 'Compete in national 36-hour hackathons, win cash grants, and spin off autonomous AI venture prototypes.',
       icon: Rocket,
-      color: '#EC4899',
+      color: '#A3A3A3',
       skills: ['Venture Pitching', 'Multi-Agent Swarms', 'Production APIS', 'Scalability']
     }
   ];
@@ -95,7 +95,7 @@ export default function AboutSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
-                className={`p-6 rounded-2xl bg-[#0B1020]/80 backdrop-blur-md border ${stat.color} shadow-[0_4px_20px_rgba(0,0,0,0.3)] hover:shadow-[0_0_25px_rgba(0,207,255,0.15)] transition-all font-mono group`}
+                className={`p-6 rounded-2xl bg-[#0a0a0a]/80 backdrop-blur-md border ${stat.color} shadow-[0_4px_20px_rgba(0,0,0,0.3)] hover:shadow-none transition-all font-mono group`}
               >
                 <div className="flex items-center justify-between mb-3">
                   <span className="text-xs text-slate-400 uppercase tracking-wider">{stat.label}</span>
@@ -111,7 +111,7 @@ export default function AboutSection() {
         </div>
 
         {/* Interactive 3D Evolution Timeline: Learn -> Experiment -> Build -> Research -> Innovate */}
-        <div className="rounded-3xl bg-[#070D1F]/90 border border-cyan-500/25 p-6 sm:p-10 shadow-[0_0_40px_rgba(0,0,0,0.5)]">
+        <div className="rounded-3xl bg-[#0A0A0A]/90 border border-cyan-500/25 p-6 sm:p-10 shadow-[0_0_40px_rgba(0,0,0,0.5)]">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-cyan-500/15 pb-6 mb-8">
             <div>
               <h3 className="text-xl sm:text-2xl font-bold text-white font-mono flex items-center gap-2">
@@ -140,7 +140,7 @@ export default function AboutSection() {
                   onMouseEnter={() => soundFx.playHover()}
                   className={`p-2.5 sm:p-4 rounded-xl border text-center font-mono transition-all flex flex-col items-center justify-center gap-1.5 ${
                     isSelected
-                      ? 'bg-cyan-500/20 border-cyan-400 text-white shadow-[0_0_20px_rgba(0,207,255,0.3)]'
+                      ? 'bg-cyan-500/20 border-cyan-400 text-white shadow-none'
                       : 'bg-slate-900/50 border-slate-800 text-slate-400 hover:border-slate-700 hover:text-slate-200'
                   }`}
                 >
@@ -192,7 +192,7 @@ export default function AboutSection() {
 
             <div className="lg:col-span-4 flex flex-col items-center justify-center p-6 rounded-xl bg-gradient-to-br from-slate-900 to-slate-950 border border-slate-800 text-center">
               <div
-                className="w-16 h-16 rounded-2xl flex items-center justify-center mb-3 shadow-[0_0_25px_rgba(0,207,255,0.25)]"
+                className="w-16 h-16 rounded-2xl flex items-center justify-center mb-3 shadow-none"
                 style={{ backgroundColor: `${timelineStages[activeStage].color}20`, border: `1px solid ${timelineStages[activeStage].color}` }}
               >
                 {React.createElement(timelineStages[activeStage].icon, {

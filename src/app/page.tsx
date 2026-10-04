@@ -17,7 +17,7 @@ export default function HomePage() {
   return (
     <main className="flex-1 flex flex-col w-full overflow-hidden">
       {/* 1. Hero Section with 3D Neural Core */}
-      <HeroSection />
+      <HeroSection background={null} />
 
       {/* 2. About & 5-Stage Evolution Timeline */}
       <AboutSection />

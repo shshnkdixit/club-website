@@ -4626,7 +4626,7 @@ export default function AdminDashboardPage() {
 
                   {/* Add Custom Field Inline Modal / Form */}
                   {addingCustomField && (
-                    <div className="p-4 rounded-2xl bg-[#0B1020] border-2 border-amber-500/40 space-y-3 pt-4">
+                    <div className="p-4 rounded-2xl bg-[#0a0a0a] border-2 border-amber-500/40 space-y-3 pt-4">
                       <div className="flex items-center justify-between border-b border-slate-800 pb-2">
                         <strong className="text-xs font-bold text-amber-300 uppercase">Create New Form Question</strong>
                         <button

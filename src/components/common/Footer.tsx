@@ -34,7 +34,7 @@ export default function Footer() {
               onMouseEnter={playHover}
               className="inline-flex items-center gap-2.5 group"
             >
-              <div className="w-10 h-10 rounded-xl bg-white p-1 border border-cyan-400/50 shadow-[0_0_15px_rgba(0,207,255,0.3)] flex items-center justify-center overflow-hidden group-hover:shadow-[0_0_20px_rgba(0,207,255,0.6)] group-hover:scale-105 transition-all">
+              <div className="w-10 h-10 rounded-xl bg-white p-1 border border-cyan-400/50 shadow-none flex items-center justify-center overflow-hidden group-hover:shadow-none group-hover:scale-105 transition-all">
                 <img
                   src="/images/logo.png"
                   alt="AI/ML Club Logo"
@@ -51,7 +51,7 @@ export default function Footer() {
             </p>
 
             {/* Live System Telemetry Box */}
-            <div className="p-3 rounded-xl bg-[#0B1020]/90 border border-cyan-500/25 max-w-sm space-y-2 font-mono text-[11px]">
+            <div className="p-3 rounded-xl bg-[#0a0a0a]/90 border border-cyan-500/25 max-w-sm space-y-2 font-mono text-[11px]">
               <div className="flex items-center justify-between text-cyan-400">
                 <span className="flex items-center gap-1.5">
                   <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />

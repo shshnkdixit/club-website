@@ -97,8 +97,8 @@ export default function Navbar() {
         <nav
           className={`w-full max-w-7xl rounded-2xl transition-all duration-300 flex items-center justify-between border ${
             scrolled
-              ? 'py-2.5 px-4 sm:px-6 bg-[#070D1F]/90 backdrop-blur-xl border-cyan-500/30 shadow-[0_10px_30px_rgba(0,0,0,0.5),0_0_20px_rgba(0,207,255,0.15)]'
-              : 'py-3.5 px-5 sm:px-7 bg-[#0B1020]/60 backdrop-blur-md border-cyan-500/15 shadow-[0_4px_20px_rgba(0,0,0,0.3)]'
+              ? 'py-2.5 px-4 sm:px-6 bg-[#0A0A0A]/90 backdrop-blur-xl border-cyan-500/30 shadow-[0_10px_30px_rgba(0,0,0,0.5)]'
+              : 'py-3.5 px-5 sm:px-7 bg-[#0a0a0a]/60 backdrop-blur-md border-cyan-500/15 shadow-[0_4px_20px_rgba(0,0,0,0.3)]'
           }`}
         >
           {/* Logo & Lab Branding */}
@@ -108,7 +108,7 @@ export default function Navbar() {
             onMouseEnter={playHover}
             className="flex items-center gap-2.5 group shrink-0"
           >
-            <div className="relative w-9 h-9 rounded-xl bg-white p-1 border border-cyan-400/50 shadow-[0_0_15px_rgba(0,207,255,0.4)] flex items-center justify-center overflow-hidden group-hover:shadow-[0_0_20px_rgba(0,207,255,0.7)] group-hover:scale-105 transition-all">
+            <div className="relative w-9 h-9 rounded-xl bg-white p-1 border border-cyan-400/50 shadow-none flex items-center justify-center overflow-hidden group-hover:shadow-none group-hover:scale-105 transition-all">
               <img
                 src="/images/logo.png"
                 alt="AI/ML Club Logo"
@@ -142,7 +142,7 @@ export default function Navbar() {
                     onMouseEnter={playHover}
                     className={`relative px-3 py-1.5 rounded-xl font-mono text-xs font-bold transition-all duration-200 flex items-center gap-1.5 border ${
                       isActive
-                        ? 'bg-cyan-500/20 text-cyan-300 border-cyan-400 shadow-[0_0_15px_rgba(0,207,255,0.4)]'
+                        ? 'bg-cyan-500/20 text-cyan-300 border-cyan-400 shadow-none'
                         : 'bg-gradient-to-r from-cyan-500/10 to-violet-500/10 hover:from-cyan-500/20 hover:to-violet-500/20 text-cyan-300 border-cyan-500/30 hover:border-cyan-400'
                     }`}
                   >
@@ -232,7 +232,7 @@ export default function Navbar() {
               href="/join"
               onClick={playClick}
               onMouseEnter={playHover}
-              className="relative group overflow-hidden px-3.5 sm:px-4 py-2 rounded-xl font-mono text-xs font-bold text-white bg-gradient-to-r from-cyan-500 to-violet-600 hover:from-cyan-400 hover:to-violet-500 shadow-[0_0_15px_rgba(0,207,255,0.35)] transition-all transform hover:-translate-y-0.5 active:translate-y-0 hidden sm:flex"
+              className="relative group overflow-hidden px-3.5 sm:px-4 py-2 rounded-xl font-mono text-xs font-bold text-black bg-white hover:bg-neutral-200 shadow-none transition-all transform hover:-translate-y-0.5 active:translate-y-0 hidden sm:flex"
             >
               <span className="relative z-10 flex items-center gap-1.5">
                 <Sparkles className="w-3.5 h-3.5" />
@@ -331,7 +331,7 @@ export default function Navbar() {
                           }}
                           className={`p-3 rounded-2xl border transition-all flex items-start justify-between group ${
                             isActive
-                              ? 'bg-cyan-500/20 text-cyan-300 border-cyan-400 shadow-[0_0_15px_rgba(0,207,255,0.25)]'
+                              ? 'bg-cyan-500/20 text-cyan-300 border-cyan-400 shadow-none'
                               : 'bg-slate-950/60 border-slate-800/80 text-slate-200 hover:border-cyan-500/40 hover:bg-slate-900'
                           }`}
                         >
@@ -374,7 +374,7 @@ export default function Navbar() {
                           }}
                           className={`p-3 rounded-2xl border transition-all flex items-start justify-between group ${
                             item.highlight
-                              ? 'bg-gradient-to-r from-cyan-500/15 to-violet-500/15 border-cyan-400/80 text-cyan-300 shadow-[0_0_15px_rgba(0,207,255,0.2)]'
+                              ? 'bg-gradient-to-r from-cyan-500/15 to-violet-500/15 border-cyan-400/80 text-cyan-300 shadow-none'
                               : isActive
                               ? 'bg-yellow-500/20 text-yellow-300 border-yellow-400 shadow-[0_0_15px_rgba(234,179,8,0.25)]'
                               : 'bg-slate-950/60 border-slate-800/80 text-slate-200 hover:border-yellow-500/40 hover:bg-slate-900'
@@ -420,7 +420,7 @@ export default function Navbar() {
                           }}
                           className={`p-3 rounded-2xl border transition-all flex items-start justify-between group ${
                             item.highlight
-                              ? 'bg-gradient-to-r from-cyan-500 to-violet-600 text-white font-bold border-cyan-400 shadow-[0_0_20px_rgba(0,207,255,0.3)]'
+                              ? 'bg-white hover:bg-neutral-200 text-black font-bold border-white shadow-none'
                               : item.admin
                               ? 'bg-amber-500/10 border-amber-500/30 text-amber-300 hover:border-amber-400'
                               : isActive

@@ -5,7 +5,8 @@ import Navbar from '@/components/common/Navbar';
 import Footer from '@/components/common/Footer';
 import CustomCursor from '@/components/common/CustomCursor';
 import Preloader from '@/components/common/Preloader';
-import OrbBackground from '@/components/common/OrbBackground';
+import DottedSurface from '@/components/ui/dotted-surface';
+import ThemeProvider from '@/components/common/ThemeProvider';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -53,7 +54,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: '#050816',
+  themeColor: '#000000',
   width: 'device-width',
   initialScale: 1,
   maximumScale: 5,
@@ -65,10 +66,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable} dark scroll-smooth`}>
-      <body className="min-h-screen bg-[#050816] text-[#F5F7FF] flex flex-col antialiased selection:bg-cyan-400 selection:text-black overflow-x-hidden relative">
-        {/* Full-Page Interactive WebGL Orb Background */}
-        <OrbBackground />
+    <html lang="en" className={`${geistSans.variable} ${geistMono.variable} dark scroll-smooth`} suppressHydrationWarning>
+      <body className="min-h-screen bg-[#000000] text-[#EDEDED] flex flex-col antialiased selection:bg-white selection:text-black overflow-x-hidden relative">
+        <ThemeProvider attribute="class" defaultTheme="dark" forcedTheme="dark" enableSystem={false}>
+        {/* Full-Page Animated Dotted Wave Background */}
+        <DottedSurface className="z-0" opacity={0.55} />
+        <div aria-hidden="true" className="content-veil pointer-events-none fixed inset-0 z-0" />
 
         {/* Futuristic Node-Linking Boot Initializer */}
         <Preloader />
@@ -86,6 +89,7 @@ export default function RootLayout({
 
         {/* Futuristic Cyber Laboratory Footer */}
         <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );

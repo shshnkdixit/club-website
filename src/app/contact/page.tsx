@@ -73,7 +73,7 @@ export default function ContactPage() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           {/* Left Col: Contact Info & Lab Coordinates */}
           <div className="lg:col-span-5 space-y-6">
-            <div className="p-6 rounded-3xl bg-[#0B1020]/90 border border-cyan-500/30 shadow-[0_0_30px_rgba(0,0,0,0.5)] space-y-4">
+            <div className="p-6 rounded-3xl bg-[#0a0a0a]/90 border border-cyan-500/30 shadow-[0_0_30px_rgba(0,0,0,0.5)] space-y-4">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-[11px] text-cyan-300">
                 <Terminal className="w-3.5 h-3.5" />
                 <span>LABORATORY DISPATCH</span>
@@ -119,7 +119,7 @@ export default function ContactPage() {
                   initial={{ opacity: 0, y: 15 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, scale: 0.95 }}
-                  className="p-6 sm:p-8 rounded-3xl bg-[#0B1020]/90 backdrop-blur-xl border border-cyan-500/30 shadow-[0_0_40px_rgba(0,207,255,0.15)]"
+                  className="p-6 sm:p-8 rounded-3xl bg-[#0a0a0a]/90 backdrop-blur-xl border border-cyan-500/30 shadow-[0_0_40px_rgba(0,207,255,0.15)]"
                 >
                   <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
                     <MessageSquare className="w-4 h-4 text-cyan-400" />
@@ -227,7 +227,7 @@ export default function ContactPage() {
                   key="sent"
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
-                  className="p-8 sm:p-12 rounded-3xl bg-[#0B1020]/95 border border-cyan-400 text-center space-y-4 shadow-[0_0_50px_rgba(0,207,255,0.3)]"
+                  className="p-8 sm:p-12 rounded-3xl bg-[#0a0a0a]/95 border border-cyan-400 text-center space-y-4 shadow-[0_0_50px_rgba(0,207,255,0.3)]"
                 >
                   <div className="w-16 h-16 rounded-2xl bg-cyan-500/20 border border-cyan-400 mx-auto flex items-center justify-center">
                     <CheckCircle2 className="w-8 h-8 text-cyan-400" />

@@ -463,7 +463,7 @@ export default function ChallengesPage() {
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Search quests by name, topic, or tag..."
-                className="w-full bg-[#0B1020]/90 border border-cyan-500/30 rounded-xl pl-9 pr-3 py-2 text-xs text-slate-100 placeholder-slate-500 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition-all font-mono"
+                className="w-full bg-[#0a0a0a]/90 border border-cyan-500/30 rounded-xl pl-9 pr-3 py-2 text-xs text-slate-100 placeholder-slate-500 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition-all font-mono"
               />
             </div>
           </div>
@@ -1177,7 +1177,7 @@ export default function ChallengesPage() {
                           value={studentName}
                           onChange={(e) => setStudentName(e.target.value)}
                           placeholder="e.g. Alex Morgan"
-                          className="w-full bg-[#0B1020] border border-slate-700 focus:border-cyan-400 rounded-xl px-3 py-2 text-white placeholder-slate-500 focus:outline-none transition-all"
+                          className="w-full bg-[#0a0a0a] border border-slate-700 focus:border-cyan-400 rounded-xl px-3 py-2 text-white placeholder-slate-500 focus:outline-none transition-all"
                         />
                       </div>
 
@@ -1191,7 +1191,7 @@ export default function ChallengesPage() {
                           value={studentUID}
                           onChange={(e) => setStudentUID(e.target.value)}
                           placeholder="e.g. CS26B1042"
-                          className="w-full bg-[#0B1020] border border-slate-700 focus:border-cyan-400 rounded-xl px-3 py-2 text-white placeholder-slate-500 focus:outline-none transition-all uppercase"
+                          className="w-full bg-[#0a0a0a] border border-slate-700 focus:border-cyan-400 rounded-xl px-3 py-2 text-white placeholder-slate-500 focus:outline-none transition-all uppercase"
                         />
                       </div>
                     </div>
@@ -1206,7 +1206,7 @@ export default function ChallengesPage() {
                         value={githubRepoUrl}
                         onChange={(e) => setGithubRepoUrl(e.target.value)}
                         placeholder="https://github.com/username/ai-club-challenge-solution"
-                        className="w-full bg-[#0B1020] border border-slate-700 focus:border-cyan-400 rounded-xl px-3 py-2 text-white placeholder-slate-500 focus:outline-none transition-all"
+                        className="w-full bg-[#0a0a0a] border border-slate-700 focus:border-cyan-400 rounded-xl px-3 py-2 text-white placeholder-slate-500 focus:outline-none transition-all"
                       />
                     </div>
 
@@ -1219,7 +1219,7 @@ export default function ChallengesPage() {
                         value={solutionNotes}
                         onChange={(e) => setSolutionNotes(e.target.value)}
                         placeholder="Briefly describe your algorithmic approach, tensor optimizations, or benchmark results..."
-                        className="w-full bg-[#0B1020] border border-slate-700 focus:border-cyan-400 rounded-xl px-3 py-2 text-white placeholder-slate-500 focus:outline-none transition-all resize-none"
+                        className="w-full bg-[#0a0a0a] border border-slate-700 focus:border-cyan-400 rounded-xl px-3 py-2 text-white placeholder-slate-500 focus:outline-none transition-all resize-none"
                       />
                     </div>
 

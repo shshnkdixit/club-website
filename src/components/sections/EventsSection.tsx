@@ -83,7 +83,7 @@ export default function EventsSection() {
 
         {/* Live Flagship Event Countdown Banner */}
         {flagshipEvent && (
-          <div className="mb-14 p-6 sm:p-8 rounded-3xl bg-gradient-to-br from-[#0B1020] to-[#070D1F] border border-cyan-500/35 shadow-[0_0_40px_rgba(0,207,255,0.2)] flex flex-col lg:flex-row items-center justify-between gap-8 font-mono">
+          <div className="mb-14 p-6 sm:p-8 rounded-3xl bg-gradient-to-br from-[#0a0a0a] to-[#0A0A0A] border border-cyan-500/35 shadow-none flex flex-col lg:flex-row items-center justify-between gap-8 font-mono">
             <div className="space-y-2 text-center lg:text-left">
               <div className="flex items-center justify-center lg:justify-start gap-2">
                 <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping" />
@@ -114,9 +114,9 @@ export default function EventsSection() {
                 ].map(item => (
                   <div
                     key={item.label}
-                    className="p-3 sm:p-4 rounded-2xl bg-[#050816]/90 border border-cyan-500/30 min-w-[65px] sm:min-w-[85px] shadow-[0_0_15px_rgba(0,207,255,0.15)]"
+                    className="p-3 sm:p-4 rounded-2xl bg-[#000000]/90 border border-cyan-500/30 min-w-[65px] sm:min-w-[85px] shadow-none"
                   >
-                    <div className="text-2xl sm:text-4xl font-extrabold text-white text-glow-cyan">
+                    <div className="text-2xl sm:text-4xl font-extrabold text-white">
                       {String(item.val).padStart(2, '0')}
                     </div>
                     <div className="text-[9px] sm:text-[10px] text-cyan-400/80 uppercase font-bold mt-1 tracking-wider">
@@ -145,7 +145,7 @@ export default function EventsSection() {
                 transition={{ duration: 0.4, delay: idx * 0.1 }}
                 onClick={() => handleOpenEvent(event)}
                 onMouseEnter={() => soundFx.playHover()}
-                className="group cursor-pointer p-6 rounded-3xl bg-[#0B1020]/75 backdrop-blur-md border border-cyan-500/20 hover:border-cyan-400/60 shadow-[0_4px_25px_rgba(0,0,0,0.3)] hover:shadow-[0_0_25px_rgba(0,207,255,0.2)] transition-all flex flex-col justify-between transform hover:-translate-y-1"
+                className="group cursor-pointer p-6 rounded-3xl bg-[#0a0a0a]/75 backdrop-blur-md border border-cyan-500/20 hover:border-cyan-400/60 shadow-[0_4px_25px_rgba(0,0,0,0.3)] hover:shadow-none transition-all flex flex-col justify-between transform hover:-translate-y-1"
               >
                 <div>
                   {/* Top Bar: Date & Type */}
@@ -222,7 +222,7 @@ export default function EventsSection() {
                 initial={{ opacity: 0, scale: 0.95, y: 15 }}
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.95, y: 15 }}
-                className="relative w-full max-w-2xl bg-[#0B1020] border border-cyan-500/40 rounded-3xl p-6 sm:p-8 shadow-[0_0_50px_rgba(0,207,255,0.3)] z-10 font-mono text-xs overflow-y-auto max-h-[85vh]"
+                className="relative w-full max-w-2xl bg-[#0a0a0a] border border-cyan-500/40 rounded-3xl p-6 sm:p-8 shadow-none z-10 font-mono text-xs overflow-y-auto max-h-[85vh]"
               >
                 <div className="flex items-center justify-between border-b border-cyan-500/20 pb-4 mb-4">
                   <div>
@@ -299,7 +299,7 @@ export default function EventsSection() {
                         soundFx.playClick();
                         setSelectedEvent(null);
                       }}
-                      className="px-6 py-2.5 rounded-xl bg-gradient-to-r from-cyan-500 to-violet-600 hover:from-cyan-400 hover:to-violet-500 text-white font-bold text-xs shadow-[0_0_20px_rgba(0,207,255,0.4)] flex items-center gap-2"
+                      className="px-6 py-2.5 rounded-xl bg-white hover:bg-neutral-200 text-black font-bold text-xs shadow-none flex items-center gap-2"
                     >
                       <Sparkles className="w-4 h-4" />
                       <span>Reserve Student Pass</span>

@@ -229,7 +229,7 @@ export default function ProjectsPage() {
                 initial={{ opacity: 0, scale: 0.95, y: 15 }}
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.95, y: 15 }}
-                className="relative w-full max-w-3xl bg-[#0B1020] border-2 border-cyan-400 rounded-3xl p-6 sm:p-8 shadow-[0_0_70px_rgba(0,207,255,0.4)] z-10 font-mono text-xs overflow-y-auto max-h-[85vh] my-auto"
+                className="relative w-full max-w-3xl bg-[#0a0a0a] border-2 border-cyan-400 rounded-3xl p-6 sm:p-8 shadow-[0_0_70px_rgba(0,207,255,0.4)] z-10 font-mono text-xs overflow-y-auto max-h-[85vh] my-auto"
               >
                 <div className="flex items-center justify-between border-b border-cyan-500/20 pb-4 mb-4">
                   <div>

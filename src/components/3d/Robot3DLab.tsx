@@ -56,20 +56,20 @@ export default function Robot3DLab({ actionState, onSelectHologram }: Robot3DLab
     fillLight.position.set(-4, 3, 2);
     scene.add(fillLight);
 
-    const cyanRim = new THREE.PointLight(0x00f5ff, 8.5, 15);
+    const cyanRim = new THREE.PointLight(0xffffff, 8.5, 15);
     cyanRim.position.set(3.8, 2.4, 0.8);
     scene.add(cyanRim);
 
-    const purpleBack = new THREE.PointLight(0x9d4edd, 7.5, 18);
+    const purpleBack = new THREE.PointLight(0x8a8a8a, 7.5, 18);
     purpleBack.position.set(-3.8, 3.2, -2.2);
     scene.add(purpleBack);
 
-    const floorGlow = new THREE.PointLight(0x00f5ff, 4.5, 9);
+    const floorGlow = new THREE.PointLight(0xffffff, 4.5, 9);
     floorGlow.position.set(0, 0.05, 0);
     scene.add(floorGlow);
 
     // Ceiling Halo Ring Light
-    const haloLight = new THREE.PointLight(0x00f5ff, 5, 8);
+    const haloLight = new THREE.PointLight(0xffffff, 5, 8);
     haloLight.position.set(0, 3.2, 0);
     scene.add(haloLight);
 
@@ -110,12 +110,12 @@ export default function Robot3DLab({ actionState, onSelectHologram }: Robot3DLab
       metalness: 0.95,
     });
 
-    const cyanNeon = new THREE.MeshBasicMaterial({ color: 0x00f5ff });
-    const cyanNeonBright = new THREE.MeshBasicMaterial({ color: 0xd0faff });
-    const purpleNeon = new THREE.MeshBasicMaterial({ color: 0x9d4edd });
+    const cyanNeon = new THREE.MeshBasicMaterial({ color: 0xffffff });
+    const cyanNeonBright = new THREE.MeshBasicMaterial({ color: 0xffffff });
+    const purpleNeon = new THREE.MeshBasicMaterial({ color: 0x8a8a8a });
 
     const holoGlassMat = new THREE.MeshPhysicalMaterial({
-      color: 0x00cfff,
+      color: 0xffffff,
       transparent: true,
       opacity: 0.52,
       roughness: 0.08,
@@ -141,25 +141,25 @@ export default function Robot3DLab({ actionState, onSelectHologram }: Robot3DLab
     // ==========================================
     // 4. ENVIRONMENT, CEILING HALO & FLOOR
     // ==========================================
-    const ceilingHalo = mkRing(1.6, 0.022, 0x00f5ff);
+    const ceilingHalo = mkRing(1.6, 0.022, 0xffffff);
     ceilingHalo.rotation.x = Math.PI / 2;
     ceilingHalo.position.set(0, 3.2, 0);
     scene.add(ceilingHalo);
 
-    const ceilingHaloInner = mkRing(1.2, 0.014, 0x9d4edd);
+    const ceilingHaloInner = mkRing(1.2, 0.014, 0x8a8a8a);
     ceilingHaloInner.rotation.x = Math.PI / 2;
     ceilingHaloInner.position.set(0, 3.25, 0);
     scene.add(ceilingHaloInner);
 
     // Floor Grid
-    const grid = new THREE.GridHelper(30, 60, 0x00cfff, 0x0d152a);
+    const grid = new THREE.GridHelper(30, 60, 0xffffff, 0x0d152a);
     (grid.material as THREE.Material).opacity = 0.35;
     (grid.material as THREE.Material).transparent = true;
     scene.add(grid);
 
-    const fr1 = mkFloorRing(1.15, 1.22, 0x00f5ff, 0.95);
-    const fr2 = mkFloorRing(1.65, 1.70, 0x00f5ff, 0.65);
-    const fr3 = mkFloorRing(2.3, 2.34, 0x9d4edd, 0.45);
+    const fr1 = mkFloorRing(1.15, 1.22, 0xffffff, 0.95);
+    const fr2 = mkFloorRing(1.65, 1.70, 0xffffff, 0.65);
+    const fr3 = mkFloorRing(2.3, 2.34, 0x8a8a8a, 0.45);
     const fr4 = mkFloorRing(3.0, 3.03, 0xf59e0b, 0.28);
     scene.add(fr1, fr2, fr3, fr4);
 
@@ -200,7 +200,7 @@ export default function Robot3DLab({ actionState, onSelectHologram }: Robot3DLab
       ankleDisc.position.set(0, 0.09, -0.01);
       footGrp.add(ankleDisc);
 
-      const ankleRing = mkRing(0.065, 0.009, 0x00f5ff);
+      const ankleRing = mkRing(0.065, 0.009, 0xffffff);
       ankleRing.position.set(0, 0.09, -0.01);
       footGrp.add(ankleRing);
 
@@ -245,7 +245,7 @@ export default function Robot3DLab({ actionState, onSelectHologram }: Robot3DLab
       kneeCyl.rotation.z = Math.PI / 2;
       kneeHub.add(kneeCyl);
 
-      const kRingOuter = mkRing(0.075, 0.011, 0x00f5ff);
+      const kRingOuter = mkRing(0.075, 0.011, 0xffffff);
       kRingOuter.rotation.y = Math.PI / 2;
       kRingOuter.position.x = xPos > 0 ? 0.05 : -0.05;
       kneeHub.add(kRingOuter);
@@ -301,12 +301,12 @@ export default function Robot3DLab({ actionState, onSelectHologram }: Robot3DLab
     rHipPlate.position.set(0.19, -0.01, 0.02);
     pelvisGrp.add(rHipPlate);
 
-    const lHipRing = mkRing(0.07, 0.01, 0x00f5ff);
+    const lHipRing = mkRing(0.07, 0.01, 0xffffff);
     lHipRing.rotation.y = Math.PI / 2;
     lHipRing.position.set(-0.24, -0.02, 0);
     pelvisGrp.add(lHipRing);
 
-    const rHipRing = mkRing(0.07, 0.01, 0x00f5ff);
+    const rHipRing = mkRing(0.07, 0.01, 0xffffff);
     rHipRing.rotation.y = Math.PI / 2;
     rHipRing.position.set(0.24, -0.02, 0);
     pelvisGrp.add(rHipRing);
@@ -323,7 +323,7 @@ export default function Robot3DLab({ actionState, onSelectHologram }: Robot3DLab
     torsoGrp.add(spineColumn);
 
     for (let r = 0; r < 3; r++) {
-      const ribRing = mkRing(0.17 + r * 0.01, 0.005, 0x00f5ff);
+      const ribRing = mkRing(0.17 + r * 0.01, 0.005, 0xffffff);
       ribRing.rotation.x = Math.PI / 2;
       ribRing.position.y = 0.01 + r * 0.055;
       torsoGrp.add(ribRing);
@@ -364,11 +364,11 @@ export default function Robot3DLab({ actionState, onSelectHologram }: Robot3DLab
     coreCenter.position.z = 0.02;
     coreHousing.add(coreCenter);
 
-    const coreRing1 = mkRing(0.072, 0.009, 0x00f5ff);
+    const coreRing1 = mkRing(0.072, 0.009, 0xffffff);
     coreRing1.position.z = 0.025;
     coreHousing.add(coreRing1);
 
-    const coreRing2 = mkRing(0.096, 0.007, 0x00a8ff);
+    const coreRing2 = mkRing(0.096, 0.007, 0xffffff);
     coreRing2.position.z = 0.025;
     coreHousing.add(coreRing2);
 
@@ -382,7 +382,7 @@ export default function Robot3DLab({ actionState, onSelectHologram }: Robot3DLab
 
     const emblemBorder = new THREE.LineSegments(
       new THREE.EdgesGeometry(new THREE.BoxGeometry(0.18, 0.065, 0.02)),
-      new THREE.LineBasicMaterial({ color: 0x00f5ff })
+      new THREE.LineBasicMaterial({ color: 0xffffff })
     );
     emblemBorder.position.copy(emblemPlate.position);
     torsoGrp.add(emblemBorder);
@@ -404,7 +404,7 @@ export default function Robot3DLab({ actionState, onSelectHologram }: Robot3DLab
     neckBase.add(spineNeck);
 
     for (let nr = 0; nr < 3; nr++) {
-      const nRing = mkRing(0.056 + nr * 0.003, 0.0045, 0x00f5ff);
+      const nRing = mkRing(0.056 + nr * 0.003, 0.0045, 0xffffff);
       nRing.rotation.x = Math.PI / 2;
       nRing.position.set(0, -0.07 + nr * 0.035, -0.01);
       neckBase.add(nRing);
@@ -495,7 +495,7 @@ export default function Robot3DLab({ actionState, onSelectHologram }: Robot3DLab
       const glowDisc = new THREE.Mesh(
         new THREE.RingGeometry(0.014, 0.040, 64),
         new THREE.MeshBasicMaterial({
-          color: 0x00cfff,
+          color: 0xffffff,
           transparent: true,
           opacity: 0.40,
           side: THREE.DoubleSide,
@@ -505,12 +505,12 @@ export default function Robot3DLab({ actionState, onSelectHologram }: Robot3DLab
       eyeGrp.add(glowDisc);
 
       // Depth Layer 2 (Outer Glowing Cyan Torus Ring - 96 Segments)
-      const outerRing = mkRing(0.032, 0.0028, 0x00f5ff);
+      const outerRing = mkRing(0.032, 0.0028, 0xffffff);
       outerRing.position.z = 0.003;
       eyeGrp.add(outerRing);
 
       // Depth Layer 3 (Intermediate Concentric Electric-Blue Ring)
-      const midRing = mkRing(0.022, 0.0024, 0x00a8ff);
+      const midRing = mkRing(0.022, 0.0024, 0xffffff);
       midRing.position.z = 0.006;
       eyeGrp.add(midRing);
 
@@ -519,7 +519,7 @@ export default function Robot3DLab({ actionState, onSelectHologram }: Robot3DLab
       eyeGrp.add(pupilIrisGrp);
 
       // Depth Layer 4 (Inner Glowing White/Cyan Ring)
-      const innerRing = mkRing(0.013, 0.0018, 0xd0faff);
+      const innerRing = mkRing(0.013, 0.0018, 0xffffff);
       innerRing.position.z = 0.009;
       pupilIrisGrp.add(innerRing);
 
@@ -560,9 +560,9 @@ export default function Robot3DLab({ actionState, onSelectHologram }: Robot3DLab
       // Error X Cross (Visible in error state)
       const errCrossGrp = new THREE.Group();
       errCrossGrp.position.z = 0.014;
-      const xBar1 = new THREE.Mesh(new THREE.BoxGeometry(0.036, 0.0045, 0.003), new THREE.MeshBasicMaterial({ color: 0xff3366 }));
+      const xBar1 = new THREE.Mesh(new THREE.BoxGeometry(0.036, 0.0045, 0.003), new THREE.MeshBasicMaterial({ color: 0xa3a3a3 }));
       xBar1.rotation.z = Math.PI / 4;
-      const xBar2 = new THREE.Mesh(new THREE.BoxGeometry(0.036, 0.0045, 0.003), new THREE.MeshBasicMaterial({ color: 0xff3366 }));
+      const xBar2 = new THREE.Mesh(new THREE.BoxGeometry(0.036, 0.0045, 0.003), new THREE.MeshBasicMaterial({ color: 0xa3a3a3 }));
       xBar2.rotation.z = -Math.PI / 4;
       errCrossGrp.add(xBar1, xBar2);
       errCrossGrp.visible = false;
@@ -645,7 +645,7 @@ export default function Robot3DLab({ actionState, onSelectHologram }: Robot3DLab
 
     const badgeBorder = new THREE.LineSegments(
       new THREE.EdgesGeometry(new THREE.CylinderGeometry(0.030, 0.035, 0.004, 6)),
-      new THREE.LineBasicMaterial({ color: 0x00f5ff })
+      new THREE.LineBasicMaterial({ color: 0xffffff })
     );
     badgeBorder.rotation.copy(badgePlate.rotation);
     foreheadBadgeGrp.add(badgeBorder);
@@ -653,7 +653,7 @@ export default function Robot3DLab({ actionState, onSelectHologram }: Robot3DLab
     // Glowing 3D Neural Brain Icon inside badge
     const brainIcon = new THREE.Mesh(
       new THREE.IcosahedronGeometry(0.012, 1),
-      new THREE.MeshBasicMaterial({ color: 0x9d4edd, wireframe: true })
+      new THREE.MeshBasicMaterial({ color: 0x8a8a8a, wireframe: true })
     );
     brainIcon.position.set(0, 0.004, 0.005);
     foreheadBadgeGrp.add(brainIcon);
@@ -697,13 +697,13 @@ export default function Robot3DLab({ actionState, onSelectHologram }: Robot3DLab
       earGrp.add(cyanBand);
 
       // 4. Glowing Cyan Rim Ring
-      const podRing = mkRing(0.029, 0.0028, 0x00f5ff);
+      const podRing = mkRing(0.029, 0.0028, 0xffffff);
       podRing.rotation.y = Math.PI / 2;
       podRing.position.x = xPos > 0 ? 0.034 : -0.034;
       earGrp.add(podRing);
 
       // 5. Subtle Inner Purple Accent Ring
-      const podRingPurple = mkRing(0.020, 0.002, 0x9d4edd);
+      const podRingPurple = mkRing(0.020, 0.002, 0x8a8a8a);
       podRingPurple.rotation.y = Math.PI / 2;
       podRingPurple.position.x = xPos > 0 ? 0.0345 : -0.0345;
       earGrp.add(podRingPurple);
@@ -768,7 +768,7 @@ export default function Robot3DLab({ actionState, onSelectHologram }: Robot3DLab
     const rShBall = new THREE.Mesh(new THREE.SphereGeometry(0.078, 24, 24), darkJoint);
     rShoulder.add(rShBall);
 
-    const rShRing = mkRing(0.092, 0.012, 0x00f5ff);
+    const rShRing = mkRing(0.092, 0.012, 0xffffff);
     rShRing.rotation.y = Math.PI / 2;
     rShoulder.add(rShRing);
 
@@ -813,7 +813,7 @@ export default function Robot3DLab({ actionState, onSelectHologram }: Robot3DLab
     const rElbowJoint = new THREE.Mesh(new THREE.SphereGeometry(0.065, 24, 24), darkJoint);
     rElbow.add(rElbowJoint);
 
-    const rElbowRing = mkRing(0.072, 0.009, 0x00f5ff);
+    const rElbowRing = mkRing(0.072, 0.009, 0xffffff);
     rElbow.add(rElbowRing);
 
     // Muscular Contoured Forearm (Brachioradialis & Flexors)
@@ -833,7 +833,7 @@ export default function Robot3DLab({ actionState, onSelectHologram }: Robot3DLab
     rWristCuff.position.set(0, -0.27, 0);
     rElbow.add(rWristCuff);
 
-    const rWristRing = mkRing(0.062, 0.007, 0x00f5ff);
+    const rWristRing = mkRing(0.062, 0.007, 0xffffff);
     rWristRing.rotation.x = Math.PI / 2;
     rWristRing.position.set(0, -0.27, 0);
     rElbow.add(rWristRing);
@@ -849,7 +849,7 @@ export default function Robot3DLab({ actionState, onSelectHologram }: Robot3DLab
       const wristJoint = new THREE.Mesh(new THREE.SphereGeometry(0.038, 24, 24), darkJoint);
       handGrp.add(wristJoint);
 
-      const wristRingMesh = mkRing(0.052, 0.005, 0x00f5ff);
+      const wristRingMesh = mkRing(0.052, 0.005, 0xffffff);
       wristRingMesh.rotation.x = Math.PI / 2;
       handGrp.add(wristRingMesh);
 
@@ -878,7 +878,7 @@ export default function Robot3DLab({ actionState, onSelectHologram }: Robot3DLab
       palmCore.position.set(0, 0, 0.018);
       palmCenter.add(palmCore);
 
-      const palmCoreRing = mkRing(0.019, 0.0028, 0x00f5ff);
+      const palmCoreRing = mkRing(0.019, 0.0028, 0xffffff);
       palmCoreRing.position.set(0, 0, 0.019);
       palmCenter.add(palmCoreRing);
 
@@ -923,7 +923,7 @@ export default function Robot3DLab({ actionState, onSelectHologram }: Robot3DLab
         const joint2Ball = new THREE.Mesh(new THREE.SphereGeometry(0.0078, 14, 14), darkJoint);
         joint2.add(joint2Ball);
 
-        const joint2Ring = mkRing(0.0095, 0.0018, 0x00f5ff);
+        const joint2Ring = mkRing(0.0095, 0.0018, 0xffffff);
         joint2Ring.rotation.y = Math.PI / 2;
         joint2.add(joint2Ring);
 
@@ -1018,7 +1018,7 @@ export default function Robot3DLab({ actionState, onSelectHologram }: Robot3DLab
     const lShBall = new THREE.Mesh(new THREE.SphereGeometry(0.078, 24, 24), darkJoint);
     lShoulder.add(lShBall);
 
-    const lShRing = mkRing(0.092, 0.012, 0x00f5ff);
+    const lShRing = mkRing(0.092, 0.012, 0xffffff);
     lShRing.rotation.y = Math.PI / 2;
     lShoulder.add(lShRing);
 
@@ -1058,7 +1058,7 @@ export default function Robot3DLab({ actionState, onSelectHologram }: Robot3DLab
     const lElbowJoint = new THREE.Mesh(new THREE.SphereGeometry(0.065, 24, 24), darkJoint);
     lElbow.add(lElbowJoint);
 
-    const lElbowRing = mkRing(0.072, 0.009, 0x00f5ff);
+    const lElbowRing = mkRing(0.072, 0.009, 0xffffff);
     lElbow.add(lElbowRing);
 
     // Muscular Left Forearm
@@ -1093,13 +1093,13 @@ export default function Robot3DLab({ actionState, onSelectHologram }: Robot3DLab
 
     const tabletBorder = new THREE.LineSegments(
       new THREE.EdgesGeometry(new THREE.PlaneGeometry(0.52, 0.40)),
-      new THREE.LineBasicMaterial({ color: 0x00f5ff, linewidth: 2 })
+      new THREE.LineBasicMaterial({ color: 0xffffff, linewidth: 2 })
     );
     tabletGrp.add(tabletBorder);
 
     const tabletInner = new THREE.LineSegments(
       new THREE.EdgesGeometry(new THREE.PlaneGeometry(0.46, 0.34)),
-      new THREE.LineBasicMaterial({ color: 0x00a8ff })
+      new THREE.LineBasicMaterial({ color: 0xffffff })
     );
     tabletInner.position.z = 0.001;
     tabletGrp.add(tabletInner);
@@ -1109,7 +1109,7 @@ export default function Robot3DLab({ actionState, onSelectHologram }: Robot3DLab
       const bH = 0.04 + (b % 3) * 0.03;
       const bar = new THREE.Mesh(
         new THREE.BoxGeometry(0.028, bH, 0.002),
-        new THREE.MeshBasicMaterial({ color: b % 2 === 0 ? 0x00f5ff : 0x9d4edd })
+        new THREE.MeshBasicMaterial({ color: b % 2 === 0 ? 0xffffff : 0x8a8a8a })
       );
       bar.position.set(-0.13 + b * 0.052, -0.06 + bH / 2, 0.002);
       tabletGrp.add(bar);
@@ -1124,7 +1124,7 @@ export default function Robot3DLab({ actionState, onSelectHologram }: Robot3DLab
     // 7. LAB AMBIENCE & FX
     // ==========================================
     const laserMat = new THREE.MeshBasicMaterial({
-      color: 0x00f5d4,
+      color: 0xd4d4d4,
       transparent: true,
       opacity: 0,
       side: THREE.DoubleSide,
@@ -1770,7 +1770,7 @@ export default function Robot3DLab({ actionState, onSelectHologram }: Robot3DLab
 
       {/* Futuristic Hologram Quick Controls */}
       <div className="absolute top-3 left-4 pointer-events-none z-10 flex flex-col gap-1.5">
-        <div className="flex items-center gap-2 px-2.5 py-1 rounded-md bg-[#0B1020]/75 border border-cyan-500/30 backdrop-blur-md">
+        <div className="flex items-center gap-2 px-2.5 py-1 rounded-md bg-[#0a0a0a]/75 border border-cyan-500/30 backdrop-blur-md">
           <span className={`w-2 h-2 rounded-full animate-pulse ${
             actionState === 'angry' ? 'bg-rose-500' :
             actionState === 'dancing' ? 'bg-fuchsia-400' :
@@ -1791,9 +1791,9 @@ export default function Robot3DLab({ actionState, onSelectHologram }: Robot3DLab
           actionState === 'dancing' ? 'text-fuchsia-300 drop-shadow-[0_0_8px_rgba(217,70,239,0.8)]' :
           actionState === 'running' ? 'text-amber-300 drop-shadow-[0_0_8px_rgba(251,191,36,0.8)]' :
           actionState === 'sleep' ? 'text-indigo-300 drop-shadow-[0_0_8px_rgba(129,140,248,0.8)]' :
-          actionState === 'matrix' ? 'text-emerald-300 drop-shadow-[0_0_8px_rgba(52,211,153,0.8)]' :
+          actionState === 'matrix' ? 'text-emerald-300 drop-shadow-none' :
           actionState === 'combat' ? 'text-orange-300 drop-shadow-[0_0_8px_rgba(251,146,60,0.8)]' :
-          actionState === 'fly' ? 'text-sky-300 drop-shadow-[0_0_8px_rgba(56,189,248,0.8)]' :
+          actionState === 'fly' ? 'text-sky-300 drop-shadow-none' :
           actionState === 'turn_around' ? 'text-yellow-300 drop-shadow-[0_0_8px_rgba(253,224,71,0.8)]' :
           'text-cyan-400/90'
         }`}>
@@ -1830,7 +1830,7 @@ export default function Robot3DLab({ actionState, onSelectHologram }: Robot3DLab
             key={item.key}
             type="button"
             onClick={(e) => { e.preventDefault(); onSelectHologram?.(item.key); }}
-            className={`absolute pointer-events-auto ${item.pos} px-3 py-1.5 rounded-xl bg-[#0B1020]/80 backdrop-blur-md border ${item.color} shadow-[0_0_12px_rgba(0,207,255,0.2)] hover:shadow-[0_0_25px_rgba(0,207,255,0.5)] font-mono text-[10px] sm:text-xs font-bold transition-all transform hover:scale-105 active:scale-95 flex items-center gap-1.5 cursor-pointer`}
+            className={`absolute pointer-events-auto ${item.pos} px-3 py-1.5 rounded-xl bg-[#0a0a0a]/80 backdrop-blur-md border ${item.color} shadow-none hover:shadow-none font-mono text-[10px] sm:text-xs font-bold transition-all transform hover:scale-105 active:scale-95 flex items-center gap-1.5 cursor-pointer`}
           >
             <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-ping" />
             {item.label}
