@@ -325,7 +325,7 @@ export default function HeroNeuralCore() {
                   setActiveConcept(activeConcept?.name === concept.name ? null : concept);
                 }}
                 onMouseEnter={() => soundFx.playHover()}
-                className="group relative flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#0B1020]/80 backdrop-blur-md border border-cyan-500/30 hover:border-cyan-400 shadow-[0_0_15px_rgba(0,207,255,0.2)] hover:shadow-[0_0_20px_rgba(0,207,255,0.5)] transition-all transform hover:scale-105 active:scale-95"
+                className="group relative flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#0a0a0a]/80 backdrop-blur-md border border-cyan-500/30 hover:border-cyan-400 shadow-[0_0_15px_rgba(0,207,255,0.2)] hover:shadow-[0_0_20px_rgba(0,207,255,0.5)] transition-all transform hover:scale-105 active:scale-95"
               >
                 <span className="w-2 h-2 rounded-full bg-cyan-400 animate-ping" />
                 <span className="text-[11px] sm:text-xs font-mono font-bold text-slate-200 group-hover:text-cyan-300">
@@ -347,7 +347,7 @@ export default function HeroNeuralCore() {
             initial={{ opacity: 0, scale: 0.9, y: 10 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.9, y: 10 }}
-            className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 w-[90%] max-w-md p-4 rounded-2xl bg-[#0B1020]/95 backdrop-blur-xl border border-cyan-400/50 shadow-[0_0_30px_rgba(0,207,255,0.3)] font-mono text-xs"
+            className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 w-[90%] max-w-md p-4 rounded-2xl bg-[#0a0a0a]/95 backdrop-blur-xl border border-cyan-400/50 shadow-[0_0_30px_rgba(0,207,255,0.3)] font-mono text-xs"
           >
             <div className="flex items-center justify-between border-b border-cyan-500/20 pb-2 mb-2">
               <span className="text-cyan-400 font-bold tracking-wider uppercase flex items-center gap-1.5">

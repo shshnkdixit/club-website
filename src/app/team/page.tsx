@@ -105,7 +105,7 @@ function OrgTreeNode({ member, tierLevel, onOpen, isHovered, onHover }: OrgTreeN
       {/* Circular Halo Ring */}
       <div className="relative mb-3">
         <div className={`${tierStyles.size} rounded-full p-1 transition-all duration-300 ${tierStyles.ring}`}>
-          <div className="w-full h-full rounded-full bg-[#050816] relative overflow-hidden flex items-center justify-center">
+          <div className="w-full h-full rounded-full bg-[#000000] relative overflow-hidden flex items-center justify-center">
             {/* 1. NORMALLY SHOW THE AVATAR IMAGE */}
             {member.avatar && !imageError ? (
               <img
@@ -194,7 +194,7 @@ function OrgTreeNode({ member, tierLevel, onOpen, isHovered, onHover }: OrgTreeN
         </div>
 
         {/* Tier Chip / Initials Badge */}
-        <div className={`absolute -top-1 -right-1 px-1.5 py-0.5 min-w-[20px] h-5 rounded-full ${tierStyles.badgeBg} text-[9px] font-black flex items-center justify-center border-2 border-[#050816] shadow-md`}>
+        <div className={`absolute -top-1 -right-1 px-1.5 py-0.5 min-w-[20px] h-5 rounded-full ${tierStyles.badgeBg} text-[9px] font-black flex items-center justify-center border-2 border-[#000000] shadow-md`}>
           {tierStyles.badgeText}
         </div>
       </div>
@@ -559,7 +559,7 @@ export default function TeamPage() {
                   transition={{ duration: 0.3, delay: idx * 0.04 }}
                   onClick={() => handleOpenMember(member)}
                   onMouseEnter={() => soundFx.playHover()}
-                  className="group cursor-pointer p-6 rounded-3xl bg-[#0B1020]/90 border border-cyan-500/20 hover:border-cyan-400 shadow-[0_0_25px_rgba(0,0,0,0.4)] hover:shadow-[0_0_30px_rgba(0,207,255,0.25)] transition-all flex flex-col justify-between transform hover:-translate-y-1"
+                  className="group cursor-pointer p-6 rounded-3xl bg-[#0a0a0a]/90 border border-cyan-500/20 hover:border-cyan-400 shadow-[0_0_25px_rgba(0,0,0,0.4)] hover:shadow-[0_0_30px_rgba(0,207,255,0.25)] transition-all flex flex-col justify-between transform hover:-translate-y-1"
                 >
                   <div className="space-y-4">
                     <div className="flex items-start gap-4">
@@ -659,7 +659,7 @@ export default function TeamPage() {
                 initial={{ opacity: 0, scale: 0.9, y: 20 }}
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.9, y: 20 }}
-                className="relative w-full max-w-xl bg-[#0B1020] border-2 border-cyan-400 rounded-3xl p-6 sm:p-8 shadow-[0_0_70px_rgba(0,207,255,0.4)] z-10 font-mono text-xs overflow-y-auto max-h-[85vh] my-auto space-y-6"
+                className="relative w-full max-w-xl bg-[#0a0a0a] border-2 border-cyan-400 rounded-3xl p-6 sm:p-8 shadow-[0_0_70px_rgba(0,207,255,0.4)] z-10 font-mono text-xs overflow-y-auto max-h-[85vh] my-auto space-y-6"
               >
                 {/* Modal Header */}
                 <div className="flex items-start justify-between border-b border-cyan-500/20 pb-4">

@@ -375,7 +375,7 @@ export default function AILabPage() {
                         e.stopPropagation();
                         handleSelectMode(rm.mode, rm.cmd);
                       }}
-                      className={`px-2.5 py-1 rounded-xl bg-[#0B1020]/90 border text-[11px] font-bold transition-all shadow-[0_0_10px_rgba(0,0,0,0.4)] transform hover:scale-105 active:scale-95 whitespace-nowrap cursor-pointer flex items-center gap-1 ${
+                      className={`px-2.5 py-1 rounded-xl bg-[#0a0a0a]/90 border text-[11px] font-bold transition-all shadow-[0_0_10px_rgba(0,0,0,0.4)] transform hover:scale-105 active:scale-95 whitespace-nowrap cursor-pointer flex items-center gap-1 ${
                         isActive
                           ? 'ring-2 ring-cyan-400 bg-cyan-950/80 ' + rm.color
                           : rm.color

@@ -105,7 +105,7 @@ export default function ProjectsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: idx * 0.1 }}
-              className="group rounded-3xl bg-[#0B1020]/80 backdrop-blur-md border border-cyan-500/20 hover:border-cyan-400/60 shadow-[0_4px_25px_rgba(0,0,0,0.4)] hover:shadow-[0_0_30px_rgba(0,207,255,0.25)] transition-all duration-300 flex flex-col overflow-hidden transform hover:-translate-y-1.5"
+              className="group rounded-3xl bg-[#0a0a0a]/80 backdrop-blur-md border border-cyan-500/20 hover:border-cyan-400/60 shadow-[0_4px_25px_rgba(0,0,0,0.4)] hover:shadow-[0_0_30px_rgba(0,207,255,0.25)] transition-all duration-300 flex flex-col overflow-hidden transform hover:-translate-y-1.5"
             >
               {/* Project Image & Interactive Simulator Banner */}
               <div className="relative h-48 w-full overflow-hidden bg-slate-950">
@@ -114,7 +114,7 @@ export default function ProjectsSection() {
                   alt={project.title}
                   className="w-full h-full object-cover opacity-70 group-hover:opacity-90 group-hover:scale-105 transition-all duration-500"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0B1020] via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-transparent" />
 
                 {/* Category Badge */}
                 <div className="absolute top-3 left-3 px-2.5 py-1 rounded-lg bg-black/70 backdrop-blur-md border border-cyan-500/30 text-[10px] font-mono text-cyan-300 font-bold uppercase">
@@ -223,7 +223,7 @@ export default function ProjectsSection() {
                 initial={{ opacity: 0, scale: 0.95, y: 15 }}
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.95, y: 15 }}
-                className="relative w-full max-w-3xl bg-[#0B1020] border border-cyan-500/40 rounded-3xl p-6 sm:p-8 shadow-[0_0_60px_rgba(0,207,255,0.3)] z-10 font-mono text-xs overflow-y-auto max-h-[90vh]"
+                className="relative w-full max-w-3xl bg-[#0a0a0a] border border-cyan-500/40 rounded-3xl p-6 sm:p-8 shadow-[0_0_60px_rgba(0,207,255,0.3)] z-10 font-mono text-xs overflow-y-auto max-h-[90vh]"
               >
                 <div className="flex items-center justify-between border-b border-cyan-500/20 pb-4 mb-4">
                   <div>

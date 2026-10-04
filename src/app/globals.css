@@ -2,9 +2,9 @@
 
 @layer base {
   :root {
-    --bg-space: #050816;
-    --bg-surface: #0b1020;
-    --bg-card: rgba(11, 16, 32, 0.75);
+    --bg-space: #000000;
+    --bg-surface: #0a0a0a;
+    --bg-card: rgba(10, 10, 10, 0.75);
     --border-glow: rgba(0, 207, 255, 0.2);
     --cyan-core: #00cfff;
     --purple-core: #6c63ff;
@@ -18,18 +18,18 @@
   }
 
   body {
-    background-color: #050816;
+    background-color: #000000;
     color: #f5f7ff;
     font-family: var(--font-geist-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     overflow-x: hidden;
     scroll-behavior: smooth;
     selection-background-color: #00cfff;
-    selection-color: #050816;
+    selection-color: #000000;
   }
 
   ::selection {
     background: #00cfff;
-    color: #050816;
+    color: #000000;
   }
 }
 
@@ -40,7 +40,7 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #050816;
+  background: #000000;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -54,7 +54,7 @@
 
 /* Glassmorphic Cyber Panels */
 .glass-panel {
-  background: rgba(11, 16, 32, 0.7);
+  background: rgba(10, 10, 10, 0.7);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(0, 207, 255, 0.15);
@@ -62,7 +62,7 @@
 }
 
 .glass-panel-glow {
-  background: rgba(11, 16, 32, 0.8);
+  background: rgba(10, 10, 10, 0.8);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border: 1px solid rgba(0, 207, 255, 0.35);

@@ -94,7 +94,7 @@ export default function DomainsSection() {
                 <div
                   onClick={() => handleOpenDomain(domain)}
                   onMouseEnter={() => soundFx.playHover()}
-                  className="h-full group cursor-pointer p-5 rounded-2xl bg-[#0B1020]/75 backdrop-blur-md border border-cyan-500/20 hover:border-cyan-400/60 shadow-[0_4px_20px_rgba(0,0,0,0.3)] hover:shadow-[0_0_25px_rgba(0,207,255,0.25)] transition-all duration-300 flex flex-col justify-between transform hover:-translate-y-1.5"
+                  className="h-full group cursor-pointer p-5 rounded-2xl bg-[#0a0a0a]/75 backdrop-blur-md border border-cyan-500/20 hover:border-cyan-400/60 shadow-[0_4px_20px_rgba(0,0,0,0.3)] hover:shadow-[0_0_25px_rgba(0,207,255,0.25)] transition-all duration-300 flex flex-col justify-between transform hover:-translate-y-1.5"
                 >
                   <div>
                     {/* Icon & Active Count */}
@@ -157,7 +157,7 @@ export default function DomainsSection() {
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.95, y: 10 }}
                 transition={{ duration: 0.2 }}
-                className="relative w-full max-w-2xl max-h-[85vh] my-auto bg-[#0B1020] border-2 border-cyan-400 rounded-3xl p-6 sm:p-8 shadow-[0_0_60px_rgba(0,207,255,0.4)] z-10 font-mono text-xs overflow-y-auto"
+                className="relative w-full max-w-2xl max-h-[85vh] my-auto bg-[#0a0a0a] border-2 border-cyan-400 rounded-3xl p-6 sm:p-8 shadow-[0_0_60px_rgba(0,207,255,0.4)] z-10 font-mono text-xs overflow-y-auto"
               >
                 {/* Header */}
                 <div className="flex items-center justify-between border-b border-cyan-500/20 pb-4 mb-6">

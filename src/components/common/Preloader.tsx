@@ -69,7 +69,7 @@ export default function Preloader() {
           initial={{ opacity: 1 }}
           exit={{ opacity: 0, y: -20 }}
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-          className="fixed inset-0 z-[10000] bg-[#050816] flex flex-col items-center justify-center p-6 overflow-hidden select-none"
+          className="fixed inset-0 z-[10000] bg-[#000000] flex flex-col items-center justify-center p-6 overflow-hidden select-none"
         >
           {/* Cyber Background Grid */}
           <div className="absolute inset-0 cyber-grid-bg opacity-30 pointer-events-none" />

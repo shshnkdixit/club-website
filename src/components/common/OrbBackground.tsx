@@ -16,7 +16,7 @@ export default function OrbBackground() {
           hoverIntensity={0.5}
           rotateOnHover
           forceHoverState={false}
-          backgroundColor="#050816"
+          backgroundColor="#000000"
         />
       </div>
 
@@ -27,7 +27,7 @@ export default function OrbBackground() {
           hoverIntensity={0.4}
           rotateOnHover
           forceHoverState={false}
-          backgroundColor="#050816"
+          backgroundColor="#000000"
         />
       </div>
 

@@ -169,7 +169,7 @@ export default function AdminLoginPage() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="e.g. your.email@aimlclub.edu"
-              className="w-full bg-[#0B1020] border border-slate-700 focus:border-amber-400 rounded-xl px-3.5 py-2.5 text-white placeholder-slate-500 focus:outline-none focus:ring-1 focus:ring-amber-400 transition-all font-mono"
+              className="w-full bg-[#0a0a0a] border border-slate-700 focus:border-amber-400 rounded-xl px-3.5 py-2.5 text-white placeholder-slate-500 focus:outline-none focus:ring-1 focus:ring-amber-400 transition-all font-mono"
             />
           </div>
 
@@ -184,7 +184,7 @@ export default function AdminLoginPage() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="••••••••••••"
-                className="w-full bg-[#0B1020] border border-slate-700 focus:border-amber-400 rounded-xl px-3.5 py-2.5 pr-20 text-white placeholder-slate-500 focus:outline-none focus:ring-1 focus:ring-amber-400 transition-all font-mono"
+                className="w-full bg-[#0a0a0a] border border-slate-700 focus:border-amber-400 rounded-xl px-3.5 py-2.5 pr-20 text-white placeholder-slate-500 focus:outline-none focus:ring-1 focus:ring-amber-400 transition-all font-mono"
               />
               <button
                 type="button"

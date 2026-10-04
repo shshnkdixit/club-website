@@ -85,7 +85,7 @@ export default function CommandPalette({ isOpen, onClose }: CommandPaletteProps)
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: -10 }}
             transition={{ duration: 0.2 }}
-            className="relative w-full max-w-2xl bg-[#0B1020] border border-cyan-500/30 rounded-2xl shadow-[0_0_50px_rgba(0,207,255,0.2)] overflow-hidden z-10 flex flex-col max-h-[80vh]"
+            className="relative w-full max-w-2xl bg-[#0a0a0a] border border-cyan-500/30 rounded-2xl shadow-[0_0_50px_rgba(0,207,255,0.2)] overflow-hidden z-10 flex flex-col max-h-[80vh]"
           >
             {/* Header / Input */}
             <div className="flex items-center px-4 py-3.5 border-b border-cyan-500/20 bg-slate-900/60">

@@ -95,7 +95,7 @@ export default function AboutSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
-                className={`p-6 rounded-2xl bg-[#0B1020]/80 backdrop-blur-md border ${stat.color} shadow-[0_4px_20px_rgba(0,0,0,0.3)] hover:shadow-[0_0_25px_rgba(0,207,255,0.15)] transition-all font-mono group`}
+                className={`p-6 rounded-2xl bg-[#0a0a0a]/80 backdrop-blur-md border ${stat.color} shadow-[0_4px_20px_rgba(0,0,0,0.3)] hover:shadow-[0_0_25px_rgba(0,207,255,0.15)] transition-all font-mono group`}
               >
                 <div className="flex items-center justify-between mb-3">
                   <span className="text-xs text-slate-400 uppercase tracking-wider">{stat.label}</span>

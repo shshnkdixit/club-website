@@ -84,7 +84,7 @@ export default function ResearchPage() {
               transition={{ duration: 0.4, delay: idx * 0.05 }}
               onClick={() => handleOpenPaper(paper)}
               onMouseEnter={() => soundFx.playHover()}
-              className="group cursor-pointer p-6 sm:p-8 rounded-3xl bg-[#0B1020]/80 backdrop-blur-md border border-cyan-500/20 hover:border-cyan-400/60 shadow-[0_4px_25px_rgba(0,0,0,0.3)] hover:shadow-[0_0_30px_rgba(0,207,255,0.2)] transition-all flex flex-col justify-between"
+              className="group cursor-pointer p-6 sm:p-8 rounded-3xl bg-[#0a0a0a]/80 backdrop-blur-md border border-cyan-500/20 hover:border-cyan-400/60 shadow-[0_4px_25px_rgba(0,0,0,0.3)] hover:shadow-[0_0_30px_rgba(0,207,255,0.2)] transition-all flex flex-col justify-between"
             >
               <div>
                 <div className="flex items-center justify-between mb-4 text-xs">
@@ -161,7 +161,7 @@ export default function ResearchPage() {
                 initial={{ opacity: 0, scale: 0.95, y: 15 }}
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.95, y: 15 }}
-                className="relative w-full max-w-2xl max-h-[85vh] my-auto bg-[#0B1020] border-2 border-cyan-400 rounded-3xl p-6 sm:p-8 shadow-[0_0_60px_rgba(0,207,255,0.4)] z-10 font-mono text-xs overflow-y-auto space-y-4"
+                className="relative w-full max-w-2xl max-h-[85vh] my-auto bg-[#0a0a0a] border-2 border-cyan-400 rounded-3xl p-6 sm:p-8 shadow-[0_0_60px_rgba(0,207,255,0.4)] z-10 font-mono text-xs overflow-y-auto space-y-4"
               >
                 <div className="flex items-center justify-between border-b border-cyan-500/20 pb-4">
                   <div>

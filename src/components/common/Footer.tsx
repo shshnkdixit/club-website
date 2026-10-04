@@ -51,7 +51,7 @@ export default function Footer() {
             </p>
 
             {/* Live System Telemetry Box */}
-            <div className="p-3 rounded-xl bg-[#0B1020]/90 border border-cyan-500/25 max-w-sm space-y-2 font-mono text-[11px]">
+            <div className="p-3 rounded-xl bg-[#0a0a0a]/90 border border-cyan-500/25 max-w-sm space-y-2 font-mono text-[11px]">
               <div className="flex items-center justify-between text-cyan-400">
                 <span className="flex items-center gap-1.5">
                   <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />

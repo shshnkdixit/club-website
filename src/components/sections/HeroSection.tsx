@@ -37,7 +37,7 @@ export default function HeroSection({ background }: HeroSectionProps = {}) {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#0B1020]/90 border border-cyan-500/30 text-[11px] sm:text-xs font-mono text-cyan-300 shadow-[0_0_15px_rgba(0,207,255,0.2)]"
+            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#0a0a0a]/90 border border-cyan-500/30 text-[11px] sm:text-xs font-mono text-cyan-300 shadow-[0_0_15px_rgba(0,207,255,0.2)]"
           >
             <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
             <span>NEURAL CORE V4.2 ACTIVE</span>
@@ -94,7 +94,7 @@ export default function HeroSection({ background }: HeroSectionProps = {}) {
               href="/join"
               onClick={playClick}
               onMouseEnter={playHover}
-              className="w-full sm:w-auto px-6 py-3.5 rounded-2xl font-mono text-sm font-semibold text-slate-200 bg-[#0B1020]/80 hover:bg-slate-800/80 border border-cyan-500/30 hover:border-cyan-400 transition-all flex items-center justify-center gap-2"
+              className="w-full sm:w-auto px-6 py-3.5 rounded-2xl font-mono text-sm font-semibold text-slate-200 bg-[#0a0a0a]/80 hover:bg-slate-800/80 border border-cyan-500/30 hover:border-cyan-400 transition-all flex items-center justify-center gap-2"
             >
               <Sparkles className="w-4 h-4 text-violet-400" />
               <span>JOIN THE CLUB</span>

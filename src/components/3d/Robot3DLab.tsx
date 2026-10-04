@@ -1770,7 +1770,7 @@ export default function Robot3DLab({ actionState, onSelectHologram }: Robot3DLab
 
       {/* Futuristic Hologram Quick Controls */}
       <div className="absolute top-3 left-4 pointer-events-none z-10 flex flex-col gap-1.5">
-        <div className="flex items-center gap-2 px-2.5 py-1 rounded-md bg-[#0B1020]/75 border border-cyan-500/30 backdrop-blur-md">
+        <div className="flex items-center gap-2 px-2.5 py-1 rounded-md bg-[#0a0a0a]/75 border border-cyan-500/30 backdrop-blur-md">
           <span className={`w-2 h-2 rounded-full animate-pulse ${
             actionState === 'angry' ? 'bg-rose-500' :
             actionState === 'dancing' ? 'bg-fuchsia-400' :
@@ -1830,7 +1830,7 @@ export default function Robot3DLab({ actionState, onSelectHologram }: Robot3DLab
             key={item.key}
             type="button"
             onClick={(e) => { e.preventDefault(); onSelectHologram?.(item.key); }}
-            className={`absolute pointer-events-auto ${item.pos} px-3 py-1.5 rounded-xl bg-[#0B1020]/80 backdrop-blur-md border ${item.color} shadow-[0_0_12px_rgba(0,207,255,0.2)] hover:shadow-[0_0_25px_rgba(0,207,255,0.5)] font-mono text-[10px] sm:text-xs font-bold transition-all transform hover:scale-105 active:scale-95 flex items-center gap-1.5 cursor-pointer`}
+            className={`absolute pointer-events-auto ${item.pos} px-3 py-1.5 rounded-xl bg-[#0a0a0a]/80 backdrop-blur-md border ${item.color} shadow-[0_0_12px_rgba(0,207,255,0.2)] hover:shadow-[0_0_25px_rgba(0,207,255,0.5)] font-mono text-[10px] sm:text-xs font-bold transition-all transform hover:scale-105 active:scale-95 flex items-center gap-1.5 cursor-pointer`}
           >
             <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-ping" />
             {item.label}

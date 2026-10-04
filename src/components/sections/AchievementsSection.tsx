@@ -50,7 +50,7 @@ export default function AchievementsSection() {
             { label: 'Global Citations', value: '1,420+', desc: 'Across 11 Publications' },
             { label: 'Industry Hires', value: '100%', desc: 'Top Tier Placements' },
           ].map((item, i) => (
-            <div key={i} className="p-5 rounded-2xl bg-[#0B1020]/90 border border-amber-500/25 text-center">
+            <div key={i} className="p-5 rounded-2xl bg-[#0a0a0a]/90 border border-amber-500/25 text-center">
               <div className="text-2xl sm:text-3xl font-extrabold text-amber-300 mb-1">
                 {item.value}
               </div>
@@ -71,7 +71,7 @@ export default function AchievementsSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: idx * 0.1 }}
-                className="p-6 rounded-3xl bg-[#0B1020]/75 backdrop-blur-md border border-amber-500/20 hover:border-amber-400/50 shadow-[0_4px_25px_rgba(0,0,0,0.3)] hover:shadow-[0_0_25px_rgba(245,158,11,0.2)] transition-all flex items-start gap-4"
+                className="p-6 rounded-3xl bg-[#0a0a0a]/75 backdrop-blur-md border border-amber-500/20 hover:border-amber-400/50 shadow-[0_4px_25px_rgba(0,0,0,0.3)] hover:shadow-[0_0_25px_rgba(245,158,11,0.2)] transition-all flex items-start gap-4"
               >
                 <div className="w-12 h-12 rounded-2xl bg-amber-500/15 border border-amber-500/40 flex items-center justify-center text-amber-400 shrink-0 shadow-[0_0_15px_rgba(245,158,11,0.2)]">
                   <Icon className="w-6 h-6" />

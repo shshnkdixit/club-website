@@ -98,7 +98,7 @@ export default function Navbar() {
           className={`w-full max-w-7xl rounded-2xl transition-all duration-300 flex items-center justify-between border ${
             scrolled
               ? 'py-2.5 px-4 sm:px-6 bg-[#070D1F]/90 backdrop-blur-xl border-cyan-500/30 shadow-[0_10px_30px_rgba(0,0,0,0.5),0_0_20px_rgba(0,207,255,0.15)]'
-              : 'py-3.5 px-5 sm:px-7 bg-[#0B1020]/60 backdrop-blur-md border-cyan-500/15 shadow-[0_4px_20px_rgba(0,0,0,0.3)]'
+              : 'py-3.5 px-5 sm:px-7 bg-[#0a0a0a]/60 backdrop-blur-md border-cyan-500/15 shadow-[0_4px_20px_rgba(0,0,0,0.3)]'
           }`}
         >
           {/* Logo & Lab Branding */}
