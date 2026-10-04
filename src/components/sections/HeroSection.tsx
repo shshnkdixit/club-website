@@ -21,7 +21,11 @@ export default function HeroSection({ background }: HeroSectionProps = {}) {
   return (
     <section className="relative min-h-screen pt-28 sm:pt-36 pb-20 flex flex-col justify-between overflow-hidden bg-transparent">
       {/* Ambient Cyber Background Lighting */}
-      {background ?? <div className="absolute inset-0 cyber-grid-bg opacity-25 pointer-events-none" />}
+      {background === undefined ? (
+        <div className="absolute inset-0 cyber-grid-bg opacity-25 pointer-events-none" />
+      ) : (
+        background
+      )}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] sm:w-[900px] h-[500px] bg-gradient-to-br from-cyan-500/15 via-indigo-600/10 to-violet-600/15 blur-[140px] pointer-events-none" />
 
       {/* Hero Content Container */}
