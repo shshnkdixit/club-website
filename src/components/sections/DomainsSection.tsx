@@ -1,22 +1,22 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
-import { 
-  Cpu, 
-  BrainCircuit, 
-  Layers, 
-  Sparkles, 
-  Scan, 
-  MessageSquareCode, 
-  Bot, 
-  BarChart3, 
-  Gamepad2, 
-  Workflow, 
-  ArrowRight, 
-  X, 
-  CheckCircle2 
+import {
+  Cpu,
+  BrainCircuit,
+  Layers,
+  Sparkles,
+  Scan,
+  MessageSquareCode,
+  Bot,
+  BarChart3,
+  Gamepad2,
+  Workflow,
+  ArrowRight,
+  CheckCircle2,
+  Timer,
 } from 'lucide-react';
 import { AIDomain } from '@/types';
 import { useCMSData } from '@/lib/cmsStore';
@@ -32,237 +32,155 @@ const ICON_MAP: Record<string, React.ElementType> = {
   Bot,
   BarChart3,
   Gamepad2,
-  Workflow
+  Workflow,
 };
+
+type StopwatchState = 'idle' | 'running' | 'stopped' | 'expanded';
+
+function formatElapsed(milliseconds: number) {
+  const totalCentiseconds = Math.floor(milliseconds / 10);
+  const centiseconds = totalCentiseconds % 100;
+  const totalSeconds = Math.floor(totalCentiseconds / 100);
+  const seconds = totalSeconds % 60;
+  const minutes = Math.floor(totalSeconds / 60);
+  return `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}:${String(centiseconds).padStart(2, '0')}`;
+}
+
+function DomainStopwatch({ domain, index }: { domain: AIDomain; index: number }) {
+  const [status, setStatus] = useState<StopwatchState>('idle');
+  const [elapsed, setElapsed] = useState(0);
+  const startedAt = useRef<number | null>(null);
+  const savedElapsed = useRef(0);
+  const Icon = ICON_MAP[domain.iconName] || Cpu;
+
+  useEffect(() => {
+    if (status !== 'running') return;
+    let frame = 0;
+    const tick = (now: number) => {
+      if (startedAt.current !== null) {
+        const nextElapsed = savedElapsed.current + now - startedAt.current;
+        setElapsed(nextElapsed);
+      }
+      frame = requestAnimationFrame(tick);
+    };
+    frame = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(frame);
+  }, [status]);
+
+  const handlePress = () => {
+    soundFx.playClick();
+    if (status === 'idle' || status === 'stopped') {
+      startedAt.current = performance.now();
+      savedElapsed.current = status === 'idle' ? 0 : elapsed;
+      if (status === 'idle') setElapsed(0);
+      setStatus('running');
+      return;
+    }
+    if (status === 'running') {
+      const finalElapsed = savedElapsed.current + (performance.now() - (startedAt.current ?? performance.now()));
+      setElapsed(finalElapsed);
+      savedElapsed.current = finalElapsed;
+      startedAt.current = null;
+      setStatus('expanded');
+      soundFx.playHologram();
+      return;
+    }
+    setStatus('idle');
+    setElapsed(0);
+    savedElapsed.current = 0;
+  };
+
+  const isOpen = status === 'expanded';
+  const isRunning = status === 'running';
+  const stateLabel = isRunning ? 'RUNNING' : isOpen ? 'STOPPED' : status === 'stopped' ? 'PAUSED' : 'READY';
+
+  return (
+    <motion.article
+      layout
+      initial={{ opacity: 0, y: 24 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: '-40px' }}
+      transition={{ duration: 0.45, delay: index * 0.04 }}
+      className={`relative overflow-hidden rounded-[2rem] border bg-black/55 backdrop-blur-xl transition-colors duration-500 ${isOpen ? 'sm:col-span-2 lg:col-span-2' : ''}`}
+      style={{ borderColor: isRunning || isOpen ? `${domain.color}80` : `${domain.color}35` }}
+    >
+      <button
+        type="button"
+        onClick={handlePress}
+        aria-expanded={isOpen}
+        aria-label={`${isRunning ? 'Stop' : isOpen ? 'Collapse' : 'Start'} ${domain.name} stopwatch`}
+        className="group relative flex min-h-[260px] w-full flex-col items-center justify-center overflow-hidden p-6 text-center outline-none focus-visible:ring-2 focus-visible:ring-white/80 focus-visible:ring-inset"
+      >
+        <div className="absolute inset-0 opacity-20" style={{ background: `radial-gradient(circle at 50% 35%, ${domain.color}, transparent 60%)` }} />
+        <div className={`absolute inset-5 rounded-[1.5rem] border border-dashed transition-transform duration-700 ${isRunning ? 'animate-spin' : ''}`} style={{ borderColor: `${domain.color}25`, animationDuration: '18s' }} />
+        <div className="relative flex size-44 items-center justify-center rounded-full border-2 transition-all duration-500" style={{ borderColor: `${domain.color}${isRunning || isOpen ? 'cc' : '65'}`, boxShadow: isRunning ? `0 0 32px ${domain.color}45, inset 0 0 24px ${domain.color}18` : `inset 0 0 20px ${domain.color}12` }}>
+          <div className={`absolute inset-2 rounded-full border transition-all duration-500 ${isRunning ? 'animate-pulse' : ''}`} style={{ borderColor: `${domain.color}35` }} />
+          <div className="absolute -top-3 rounded-full border bg-black px-3 py-1 font-mono text-[9px] tracking-[0.28em] text-slate-400" style={{ borderColor: `${domain.color}60` }}>CH {String(index + 1).padStart(2, '0')}</div>
+          <div className="relative flex flex-col items-center gap-2">
+            <Icon className="size-5" style={{ color: domain.color }} />
+            <span className="font-mono text-2xl font-semibold tracking-[0.12em] text-white">{formatElapsed(elapsed)}</span>
+            <span className="font-mono text-[9px] tracking-[0.3em]" style={{ color: domain.color }}>{stateLabel}</span>
+          </div>
+          <span className="absolute -right-2 top-1/2 size-2 -translate-y-1/2 rounded-full" style={{ backgroundColor: domain.color, boxShadow: `0 0 12px ${domain.color}` }} />
+        </div>
+        <span className="relative mt-5 max-w-[210px] font-mono text-xs font-semibold uppercase tracking-[0.13em] text-slate-300 transition-colors group-hover:text-white">{domain.name}</span>
+        <span className="relative mt-2 font-mono text-[9px] tracking-[0.18em] text-slate-600">{isRunning ? 'TAP TO STOP & REVEAL' : isOpen ? 'TAP TO COLLAPSE' : 'TAP TO INITIALIZE'}</span>
+      </button>
+
+      <AnimatePresence initial={false}>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            className="border-t px-6 pb-6 pt-5 text-left"
+            style={{ borderColor: `${domain.color}35` }}
+          >
+            <div className="flex flex-wrap items-center justify-between gap-3">
+              <div>
+                <p className="font-mono text-[10px] tracking-[0.2em]" style={{ color: domain.color }}>DOMAIN DOSSIER / {domain.id.toUpperCase()}</p>
+                <h3 className="mt-1 text-xl font-bold text-white">{domain.name}</h3>
+              </div>
+              <span className="rounded-full border px-3 py-1 font-mono text-[10px] text-slate-300" style={{ borderColor: `${domain.color}55` }}>{domain.activeProjectsCount} ACTIVE PROJECTS</span>
+            </div>
+            <p className="mt-4 text-sm leading-relaxed text-slate-300">{domain.fullDesc}</p>
+            <div className="mt-4 rounded-xl border bg-white/[0.03] p-3" style={{ borderColor: `${domain.color}25` }}>
+              <p className="font-mono text-[9px] tracking-[0.16em]" style={{ color: domain.color }}>CURRENT RESEARCH HORIZON</p>
+              <p className="mt-1 text-xs text-slate-200">{domain.researchFocus}</p>
+            </div>
+            <div className="mt-4 flex flex-wrap gap-2">
+              {domain.technologies.map((tech) => <span key={tech} className="rounded-md border border-white/10 bg-white/[0.04] px-2 py-1 font-mono text-[10px] text-slate-300">{tech}</span>)}
+            </div>
+            <div className="mt-4 grid grid-cols-1 gap-2 sm:grid-cols-2">
+              {domain.keyConcepts.map((concept) => <div key={concept} className="flex items-center gap-2 text-xs text-slate-400"><CheckCircle2 className="size-3.5 shrink-0" style={{ color: domain.color }} />{concept}</div>)}
+            </div>
+            <Link href={`/projects?domain=${domain.id}`} onClick={() => soundFx.playClick()} className="mt-5 inline-flex items-center gap-2 font-mono text-xs font-bold text-white transition-colors hover:text-slate-300">EXPLORE PROJECTS <ArrowRight className="size-4" /></Link>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </motion.article>
+  );
+}
 
 export default function DomainsSection() {
   const { domains } = useCMSData();
-  const [selectedDomain, setSelectedDomain] = useState<AIDomain | null>(null);
-
-  const handleOpenDomain = (domain: AIDomain) => {
-    soundFx.playHologram();
-    setSelectedDomain(domain);
-  };
 
   return (
-    <section id="domains" className="relative py-24 sm:py-32 bg-transparent overflow-hidden">
-      {/* Background Grid */}
-      <div className="absolute inset-0 cyber-grid-bg opacity-20 pointer-events-none" />
-      <div className="absolute top-1/3 right-0 w-96 h-96 bg-cyan-600/10 blur-[150px] pointer-events-none" />
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
-          <div className="space-y-3">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-[11px] font-mono text-cyan-300">
-              <Cpu className="w-3.5 h-3.5" />
-              <span>SPECIALIZED RESEARCH LABS</span>
-            </div>
-            <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
-              AI DOMAINS &{' '}
-              <span className="bg-gradient-to-r from-cyan-400 via-teal-300 to-violet-400 bg-clip-text text-transparent">
-                DISCIPLINES
-              </span>
-            </h2>
-            <p className="text-slate-400 text-sm sm:text-base font-sans max-w-xl">
-              10 specialized disciplines where student researchers design, train, and deploy foundational machine intelligence models.
-            </p>
+    <section id="domains" className="relative overflow-hidden bg-transparent py-24 sm:py-32">
+      <div className="cyber-grid-bg pointer-events-none absolute inset-0 opacity-20" />
+      <div className="pointer-events-none absolute right-0 top-1/3 size-96 bg-cyan-600/10 blur-[150px]" />
+      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mb-14 flex flex-col justify-between gap-6 md:flex-row md:items-end">
+          <div className="space-y-4">
+            <div className="inline-flex items-center gap-2 rounded-full border border-cyan-500/30 bg-cyan-500/10 px-3 py-1 font-mono text-[11px] text-cyan-300"><Timer className="size-3.5" /><span>SPECIALIZED RESEARCH LABS</span></div>
+            <h2 className="text-3xl font-extrabold tracking-tight text-white sm:text-5xl">AI DOMAINS & <span className="bg-gradient-to-r from-cyan-400 via-teal-300 to-violet-400 bg-clip-text text-transparent">DISCIPLINES</span></h2>
+            <p className="max-w-xl font-sans text-sm text-slate-400 sm:text-base">Tap. Start. Stop. Explore. Ten specialized disciplines where student researchers design, train, and deploy machine intelligence.</p>
           </div>
-
-          <Link
-            href="/projects"
-            onClick={() => soundFx.playClick()}
-            className="self-start md:self-auto inline-flex items-center gap-2 font-mono text-xs text-cyan-400 hover:text-cyan-300 transition-colors group"
-          >
-            <span>Explore Domain Projects</span>
-            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-          </Link>
+          <div className="flex items-center gap-3 font-mono text-[10px] tracking-[0.14em] text-slate-500"><span className="size-1.5 rounded-full bg-cyan-400" />TAP A DOMAIN TO START THE STOPWATCH</div>
         </div>
-
-        {/* 10 Domains 3D Glass Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 sm:gap-5">
-          {domains.map((domain, idx) => {
-            const IconComponent = ICON_MAP[domain.iconName] || Cpu;
-            return (
-              <motion.div
-                key={domain.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: idx * 0.05 }}
-              >
-                <div
-                  onClick={() => handleOpenDomain(domain)}
-                  onMouseEnter={() => soundFx.playHover()}
-                  className="h-full group cursor-pointer p-5 rounded-2xl bg-[#0a0a0a]/75 backdrop-blur-md border border-cyan-500/20 hover:border-cyan-400/60 shadow-[0_4px_20px_rgba(0,0,0,0.3)] hover:shadow-none transition-all duration-300 flex flex-col justify-between transform hover:-translate-y-1.5"
-                >
-                  <div>
-                    {/* Icon & Active Count */}
-                    <div className="flex items-center justify-between mb-4">
-                      <div
-                        className="w-10 h-10 rounded-xl flex items-center justify-center transition-transform group-hover:scale-110 shadow-none"
-                        style={{ backgroundColor: `${domain.color}20`, border: `1px solid ${domain.color}50` }}
-                      >
-                        <IconComponent className="w-5 h-5" style={{ color: domain.color }} />
-                      </div>
-                      <span className="text-[10px] font-mono text-cyan-400/80 bg-cyan-950/40 px-2 py-0.5 rounded-full border border-cyan-800/40">
-                        {domain.activeProjectsCount} Projects
-                      </span>
-                    </div>
-
-                    <h3 className="font-mono font-bold text-base text-white group-hover:text-cyan-300 transition-colors mb-2">
-                      {domain.name}
-                    </h3>
-
-                    <p className="text-xs text-slate-300 font-sans line-clamp-3 mb-4 leading-relaxed">
-                      {domain.shortDesc}
-                    </p>
-                  </div>
-
-                  <div>
-                    {/* Tech Pills */}
-                    <div className="flex flex-wrap gap-1.5 pt-2 border-t border-slate-800/80">
-                      {domain.technologies.slice(0, 2).map(t => (
-                        <span key={t} className="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-900 text-slate-300 border border-slate-800">
-                          {t}
-                        </span>
-                      ))}
-                      {domain.technologies.length > 2 && (
-                        <span className="text-[10px] font-mono px-1.5 py-0.5 text-cyan-400">
-                          +{domain.technologies.length - 2}
-                        </span>
-                      )}
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-            );
-          })}
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+          {domains.map((domain, index) => <DomainStopwatch key={domain.id} domain={domain} index={index} />)}
         </div>
-
-        {/* Detailed Holographic Domain Modal Drawer */}
-        <AnimatePresence>
-          {selectedDomain && (
-            <div className="fixed inset-0 z-[99999] flex items-center justify-center p-4 pt-24 sm:pt-28 pb-8 overflow-y-auto">
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                onClick={() => setSelectedDomain(null)}
-                className="fixed inset-0 bg-black/90 backdrop-blur-xl"
-              />
-
-              <motion.div
-                initial={{ opacity: 0, scale: 0.95, y: 10 }}
-                animate={{ opacity: 1, scale: 1, y: 0 }}
-                exit={{ opacity: 0, scale: 0.95, y: 10 }}
-                transition={{ duration: 0.2 }}
-                className="relative w-full max-w-2xl max-h-[85vh] my-auto bg-[#0a0a0a] border-2 border-cyan-400 rounded-3xl p-6 sm:p-8 shadow-none z-10 font-mono text-xs overflow-y-auto"
-              >
-                {/* Header */}
-                <div className="flex items-center justify-between border-b border-cyan-500/20 pb-4 mb-6">
-                  <div className="flex items-center gap-3">
-                    <div
-                      className="w-10 h-10 rounded-xl flex items-center justify-center"
-                      style={{ backgroundColor: `${selectedDomain.color}25`, border: `1px solid ${selectedDomain.color}` }}
-                    >
-                      {React.createElement(ICON_MAP[selectedDomain.iconName] || Cpu, {
-                        className: 'w-5 h-5',
-                        style: { color: selectedDomain.color }
-                      })}
-                    </div>
-                    <div>
-                      <h3 className="text-xl sm:text-2xl font-extrabold text-white">
-                        {selectedDomain.name}
-                      </h3>
-                      <span className="text-[10px] text-cyan-400">
-                        {selectedDomain.activeProjectsCount} ACTIVE LAB PROJECTS
-                      </span>
-                    </div>
-                  </div>
-                  <button
-                    onClick={() => setSelectedDomain(null)}
-                    className="p-1.5 rounded-lg bg-slate-800 text-slate-400 hover:text-white"
-                  >
-                    <X className="w-5 h-5" />
-                  </button>
-                </div>
-
-                {/* Body Content */}
-                <div className="space-y-6">
-                  <div>
-                    <h4 className="text-xs uppercase tracking-wider text-cyan-400 font-bold mb-2">
-                      &gt; LAB SYNOPSIS & OBJECTIVES
-                    </h4>
-                    <p className="text-slate-300 text-sm font-sans leading-relaxed">
-                      {selectedDomain.fullDesc}
-                    </p>
-                  </div>
-
-                  {/* Research Focus */}
-                  <div className="p-3.5 rounded-xl bg-cyan-950/30 border border-cyan-500/30">
-                    <span className="text-[10px] text-cyan-400 font-bold uppercase block mb-1">
-                      CURRENT RESEARCH HORIZON
-                    </span>
-                    <p className="text-slate-200 text-xs font-mono">
-                      {selectedDomain.researchFocus}
-                    </p>
-                  </div>
-
-                  {/* Technologies & Frameworks */}
-                  <div>
-                    <h4 className="text-xs uppercase tracking-wider text-cyan-400 font-bold mb-2">
-                      &gt; CORE TECHNOLOGY STACK
-                    </h4>
-                    <div className="flex flex-wrap gap-2">
-                      {selectedDomain.technologies.map(tech => (
-                        <span key={tech} className="px-3 py-1 rounded-lg bg-slate-800 border border-slate-700 text-slate-200 text-xs">
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Key Theoretical Concepts */}
-                  <div>
-                    <h4 className="text-xs uppercase tracking-wider text-cyan-400 font-bold mb-2">
-                      &gt; KEY THEORETICAL CONCEPTS
-                    </h4>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                      {selectedDomain.keyConcepts.map(c => (
-                        <div key={c} className="flex items-center gap-2 text-slate-300">
-                          <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
-                          <span>{c}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Action Link */}
-                  <div className="pt-4 border-t border-cyan-500/20 flex items-center justify-between">
-                    <Link
-                      href={`/projects?domain=${selectedDomain.id}`}
-                      onClick={() => {
-                        soundFx.playClick();
-                        setSelectedDomain(null);
-                      }}
-                      className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-cyan-500 text-black font-bold hover:bg-cyan-400 transition-colors"
-                    >
-                      <span>Explore Domain Projects</span>
-                      <ArrowRight className="w-4 h-4" />
-                    </Link>
-                    <button
-                      onClick={() => setSelectedDomain(null)}
-                      className="text-slate-400 hover:text-white"
-                    >
-                      Close Window
-                    </button>
-                  </div>
-                </div>
-              </motion.div>
-            </div>
-          )}
-        </AnimatePresence>
       </div>
     </section>
   );
