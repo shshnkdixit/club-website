@@ -19,14 +19,14 @@ export default function HeroSection({ background }: HeroSectionProps = {}) {
   const playClick = () => soundFx.playClick();
 
   return (
-    <section className="relative min-h-screen pt-28 sm:pt-36 pb-16 sm:pb-20 flex flex-col justify-between overflow-hidden bg-transparent">
+    <section className="relative min-h-screen pt-28 sm:pt-36 pb-20 flex flex-col justify-between overflow-hidden bg-transparent">
       {/* Ambient Cyber Background Lighting */}
       {background === undefined ? (
         <div className="absolute inset-0 cyber-grid-bg opacity-25 pointer-events-none" />
       ) : (
         background
       )}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[520px] sm:w-[760px] h-[420px] bg-white/[0.035] blur-[140px] pointer-events-none" />
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] sm:w-[900px] h-[500px] bg-gradient-to-br from-cyan-500/15 via-indigo-600/10 to-violet-600/15 blur-[140px] pointer-events-none" />
 
       {/* Hero Content Container */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-4 items-center">
@@ -136,10 +136,8 @@ export default function HeroSection({ background }: HeroSectionProps = {}) {
         </div>
 
         {/* Right Column: Interactive 3D AI Neural Core */}
-        <div className="lg:col-span-5 relative h-[360px] sm:h-[460px] lg:h-[520px] flex items-center justify-center overflow-visible">
-          <div className="relative w-full h-full max-w-[520px] max-h-[520px] scale-[0.84] sm:scale-[0.86] lg:scale-[0.82] origin-center">
-            <HeroNeuralCore />
-          </div>
+        <div className="lg:col-span-5 relative h-[480px] sm:h-[580px] flex items-center justify-center">
+          <HeroNeuralCore />
         </div>
       </div>
 

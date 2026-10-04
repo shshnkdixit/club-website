@@ -19,10 +19,10 @@ export default function Footer() {
   const playClick = () => soundFx.playClick();
 
   return (
-    <footer className="relative bg-[#050505]/90 backdrop-blur-md border-t border-white/10 pt-14 pb-10 overflow-hidden">
+    <footer className="relative bg-[#040612]/80 backdrop-blur-md border-t border-cyan-500/20 pt-16 pb-12 overflow-hidden">
       {/* Background Cyber Grid */}
       <div className="absolute inset-0 cyber-grid-bg opacity-15 pointer-events-none" />
-      <div className="absolute -bottom-20 left-1/2 -translate-x-1/2 w-[700px] h-[260px] bg-white/[0.025] blur-[150px] pointer-events-none" />
+      <div className="absolute -bottom-20 left-1/2 -translate-x-1/2 w-[800px] h-[300px] bg-cyan-500/10 blur-[150px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-cyan-500/15">
@@ -50,8 +50,8 @@ export default function Footer() {
               &quot;Building the intelligence of tomorrow.&quot; A premier student-driven artificial intelligence, machine learning, and robotics research community.
             </p>
 
-            {/* Quiet system status */}
-            <div className="p-3 rounded-xl bg-white/[0.025] border border-white/10 max-w-sm space-y-2 font-mono text-[11px]">
+            {/* Live System Telemetry Box */}
+            <div className="p-3 rounded-xl bg-[#0a0a0a]/90 border border-cyan-500/25 max-w-sm space-y-2 font-mono text-[11px]">
               <div className="flex items-center justify-between text-cyan-400">
                 <span className="flex items-center gap-1.5">
                   <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />

@@ -96,9 +96,9 @@ export default function Navbar() {
       >
         <nav
           className={`w-full max-w-7xl rounded-2xl transition-all duration-300 flex items-center justify-between border ${
-              scrolled
-              ? 'py-2.5 px-4 sm:px-6 bg-[#080808]/95 backdrop-blur-xl border-white/15 shadow-[0_10px_30px_rgba(0,0,0,0.5)]'
-              : 'py-3.5 px-5 sm:px-7 bg-[#080808]/75 backdrop-blur-md border-white/10 shadow-[0_4px_20px_rgba(0,0,0,0.3)]'
+            scrolled
+              ? 'py-2.5 px-4 sm:px-6 bg-[#0A0A0A]/90 backdrop-blur-xl border-cyan-500/30 shadow-[0_10px_30px_rgba(0,0,0,0.5)]'
+              : 'py-3.5 px-5 sm:px-7 bg-[#0a0a0a]/60 backdrop-blur-md border-cyan-500/15 shadow-[0_4px_20px_rgba(0,0,0,0.3)]'
           }`}
         >
           {/* Logo & Lab Branding */}
@@ -272,7 +272,7 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.25 }}
-              className="fixed inset-0 z-[980] bg-[#050505]/98 backdrop-blur-2xl flex flex-col pt-24 pb-10 px-4 sm:px-8 lg:px-16 overflow-y-auto font-mono"
+            className="fixed inset-0 z-[980] bg-[#030614]/95 backdrop-blur-2xl flex flex-col pt-24 pb-10 px-4 sm:px-8 lg:px-16 overflow-y-auto font-mono"
           >
             <div className="absolute inset-0 cyber-grid-bg opacity-20 pointer-events-none" />
             <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-cyan-500/10 blur-[180px] pointer-events-none" />
