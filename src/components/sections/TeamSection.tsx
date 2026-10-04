@@ -88,7 +88,7 @@ export default function TeamSection() {
           {crew.map(({ member, category }) => {
             const dimmed = filter !== 'ALL' && category !== filter;
             return (
-              <button key={member.id} type="button" onClick={() => openMember(member)} className={`flex items-center gap-3 border border-white/10 bg-[#070b0d]/80 p-3 text-left transition-opacity ${dimmed ? 'opacity-30' : 'opacity-100'}`}>
+              <button key={member.id} type="button" onClick={() => openMember(member)} className={`lab-card flex items-center gap-3 rounded-xl p-3 text-left transition-opacity ${dimmed ? 'opacity-30' : 'opacity-100'}`}>
                 <span className="relative size-12 shrink-0 overflow-hidden rounded-full border border-cyan-300/40 p-0.5"><img src={member.avatar} alt="" className="size-full rounded-full object-cover" /><span className="absolute bottom-0 right-0 size-2 rounded-full border border-[#070b0d] bg-emerald-300" /></span>
                 <span className="min-w-0 flex-1"><span className="block truncate font-mono text-xs font-semibold text-white">{member.name}</span><span className="block truncate font-mono text-[9px] uppercase tracking-wider text-slate-500">{member.role}</span></span>
                 <span className="border border-white/10 px-1.5 py-1 font-mono text-[8px] text-cyan-300">{category}</span><ChevronRight className="size-4 text-slate-600" />
@@ -97,7 +97,7 @@ export default function TeamSection() {
           })}
         </div>
 
-        <div className="relative hidden min-h-[620px] overflow-hidden border border-white/10 bg-[#070b0d]/80 sm:block sm:min-h-[650px]">
+        <div className="lab-card relative hidden min-h-[620px] overflow-hidden rounded-2xl sm:block sm:min-h-[650px]">
           <div className="pointer-events-none absolute inset-0 opacity-40 [background-image:linear-gradient(rgba(90,220,220,.07)_1px,transparent_1px),linear-gradient(90deg,rgba(90,220,220,.07)_1px,transparent_1px)] [background-size:48px_48px]" />
           <div className="pointer-events-none absolute left-1/2 top-1/2 size-[min(54vw,28rem)] -translate-x-1/2 -translate-y-1/2 rounded-full border border-cyan-300/10" />
           <div className="pointer-events-none absolute left-1/2 top-1/2 size-[min(40vw,20rem)] -translate-x-1/2 -translate-y-1/2 rounded-full border border-cyan-300/10 border-dashed" />

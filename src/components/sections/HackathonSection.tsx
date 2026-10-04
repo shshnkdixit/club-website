@@ -62,7 +62,7 @@ export default function HackathonSection() {
         </div>
 
         {/* 5-Stage Animated Progress Pipeline */}
-        <div className="p-6 sm:p-8 rounded-3xl bg-[#0a0a0a]/90 border border-cyan-500/30 mb-14 shadow-[0_0_35px_rgba(0,0,0,0.5)]">
+        <div className="lab-card lab-card-featured mb-14 rounded-2xl p-6 sm:p-8">
           <div className="flex items-center justify-between border-b border-cyan-500/20 pb-4 mb-6 font-mono text-xs">
             <span className="text-cyan-400 font-bold flex items-center gap-2">
               <Terminal className="w-4 h-4" /> 36-HOUR SPRINT PIPELINE
@@ -131,7 +131,7 @@ export default function HackathonSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: idx * 0.1 }}
-                className="p-6 rounded-3xl bg-[#0a0a0a]/75 backdrop-blur-md border border-cyan-500/20 hover:border-rose-500/50 shadow-[0_4px_25px_rgba(0,0,0,0.3)] hover:shadow-[0_0_25px_rgba(244,63,94,0.2)] transition-all flex flex-col justify-between"
+                className="lab-card group rounded-2xl p-6 flex flex-col justify-between"
               >
                 <div>
                   <div className="flex items-center justify-between mb-4">

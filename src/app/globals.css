@@ -78,11 +78,11 @@
 
 @layer base {
   :root {
-    --bg-space: #000000;
-    --bg-surface: #0a0a0a;
-    --bg-card: rgba(10, 10, 10, 0.75);
-    --border-glow: rgba(255, 255, 255, 0.2);
-    --cyan-core: #ffffff;
+    --bg-space: #050608;
+    --bg-surface: #0a0d11;
+    --bg-card: #0d1117;
+    --border-glow: rgba(103, 232, 249, 0.18);
+    --cyan-core: #67e8f9;
     --purple-core: #8a8a8a;
     --violet-core: #a3a3a3;
     --text-primary: #f5f7ff;
@@ -94,7 +94,7 @@
   }
 
   body {
-    background-color: #000000;
+    background-color: #050608;
     color: #f5f7ff;
     font-family: var(--font-geist-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     overflow-x: hidden;
@@ -128,13 +128,31 @@
   background: #5c5c5c;
 }
 
-/* Glassmorphic Cyber Panels */
+/* Shared premium card surface */
+.lab-card {
+  background: #0d1117;
+  border: 1px solid #252b33;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.22);
+  transition: transform 180ms ease, background-color 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.lab-card:hover {
+  background: #111821;
+  border-color: rgba(103, 232, 249, 0.42);
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.28), 0 0 18px rgba(34, 211, 238, 0.05);
+  transform: translateY(-2px);
+}
+
+.lab-card-featured {
+  border-color: rgba(103, 232, 249, 0.34);
+}
+
 .glass-panel {
-  background: rgba(12, 12, 12, 0.72);
+  background: #0d1117;
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  border: 1px solid #252b33;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.22);
 }
 
 .glass-panel-glow {
