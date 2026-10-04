@@ -113,7 +113,7 @@ export default function ProjectsPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.3, delay: idx * 0.05 }}
-              className="group rounded-3xl bg-[#080E21]/90 border border-cyan-500/20 hover:border-cyan-400 shadow-[0_0_30px_rgba(0,0,0,0.5)] hover:shadow-[0_0_30px_rgba(0,207,255,0.2)] transition-all p-6 flex flex-col justify-between"
+              className="lab-card group rounded-2xl p-6 flex flex-col justify-between"
             >
               <div className="space-y-4">
                 {/* Simulator Live Preview Badge */}

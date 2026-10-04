@@ -559,7 +559,7 @@ export default function TeamPage() {
                   transition={{ duration: 0.3, delay: idx * 0.04 }}
                   onClick={() => handleOpenMember(member)}
                   onMouseEnter={() => soundFx.playHover()}
-                  className="group cursor-pointer p-6 rounded-3xl bg-[#0a0a0a]/90 border border-cyan-500/20 hover:border-cyan-400 shadow-[0_0_25px_rgba(0,0,0,0.4)] hover:shadow-[0_0_30px_rgba(0,207,255,0.25)] transition-all flex flex-col justify-between transform hover:-translate-y-1"
+                  className="lab-card group cursor-pointer rounded-2xl p-6 flex flex-col justify-between"
                 >
                   <div className="space-y-4">
                     <div className="flex items-start gap-4">

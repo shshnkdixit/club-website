@@ -84,7 +84,7 @@ export default function ResearchPage() {
               transition={{ duration: 0.4, delay: idx * 0.05 }}
               onClick={() => handleOpenPaper(paper)}
               onMouseEnter={() => soundFx.playHover()}
-              className="group cursor-pointer p-6 sm:p-8 rounded-3xl bg-[#0a0a0a]/80 backdrop-blur-md border border-cyan-500/20 hover:border-cyan-400/60 shadow-[0_4px_25px_rgba(0,0,0,0.3)] hover:shadow-[0_0_30px_rgba(0,207,255,0.2)] transition-all flex flex-col justify-between"
+              className="lab-card group cursor-pointer rounded-2xl p-6 sm:p-8 flex flex-col justify-between"
             >
               <div>
                 <div className="flex items-center justify-between mb-4 text-xs">

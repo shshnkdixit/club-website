@@ -83,7 +83,7 @@ export default function EventsSection() {
 
         {/* Live Flagship Event Countdown Banner */}
         {flagshipEvent && (
-          <div className="mb-14 p-6 sm:p-8 rounded-3xl bg-gradient-to-br from-[#0a0a0a] to-[#0A0A0A] border border-cyan-500/35 shadow-none flex flex-col lg:flex-row items-center justify-between gap-8 font-mono">
+          <div className="lab-card lab-card-featured mb-14 rounded-2xl p-6 sm:p-8 flex flex-col lg:flex-row items-center justify-between gap-8 font-mono">
             <div className="space-y-2 text-center lg:text-left">
               <div className="flex items-center justify-center lg:justify-start gap-2">
                 <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping" />
@@ -145,7 +145,7 @@ export default function EventsSection() {
                 transition={{ duration: 0.4, delay: idx * 0.1 }}
                 onClick={() => handleOpenEvent(event)}
                 onMouseEnter={() => soundFx.playHover()}
-                className="group cursor-pointer p-6 rounded-3xl bg-[#0a0a0a]/75 backdrop-blur-md border border-cyan-500/20 hover:border-cyan-400/60 shadow-[0_4px_25px_rgba(0,0,0,0.3)] hover:shadow-none transition-all flex flex-col justify-between transform hover:-translate-y-1"
+                className="lab-card group cursor-pointer rounded-2xl p-6 flex flex-col justify-between"
               >
                 <div>
                   {/* Top Bar: Date & Type */}
