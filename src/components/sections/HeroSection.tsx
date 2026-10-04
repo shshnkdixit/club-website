@@ -37,7 +37,7 @@ export default function HeroSection({ background }: HeroSectionProps = {}) {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#0a0a0a]/90 border border-cyan-500/30 text-[11px] sm:text-xs font-mono text-cyan-300 shadow-[0_0_15px_rgba(0,207,255,0.2)]"
+            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.03] border border-white/10 text-[11px] sm:text-xs font-mono text-neutral-300 tracking-wide"
           >
             <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
             <span>NEURAL CORE V4.2 ACTIVE</span>
@@ -50,14 +50,14 @@ export default function HeroSection({ background }: HeroSectionProps = {}) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-4xl sm:text-6xl xl:text-7xl font-extrabold tracking-tight text-white leading-[1.08]"
+            className="text-4xl sm:text-6xl xl:text-7xl font-semibold tracking-tighter text-white leading-[1.02] text-balance"
           >
-            BUILD THE <br />
-            <span className="bg-gradient-to-r from-cyan-400 via-sky-300 to-violet-400 bg-clip-text text-transparent text-glow-cyan">
-              INTELLIGENCE
+            Build the <br />
+            <span className="bg-gradient-to-b from-white to-neutral-500 bg-clip-text text-transparent">
+              intelligence
             </span>
             <br />
-            OF TOMORROW
+            of tomorrow.
           </motion.h1>
 
           {/* Secondary Subtext */}
@@ -82,11 +82,11 @@ export default function HeroSection({ background }: HeroSectionProps = {}) {
               href="/ai-lab"
               onClick={playClick}
               onMouseEnter={playHover}
-              className="w-full sm:w-auto relative group overflow-hidden px-7 py-3.5 rounded-2xl font-mono text-sm font-bold text-white bg-gradient-to-r from-cyan-500 via-indigo-500 to-violet-600 hover:from-cyan-400 hover:to-violet-500 shadow-[0_0_25px_rgba(0,207,255,0.4)] transition-all transform hover:-translate-y-0.5 active:translate-y-0 flex items-center justify-center gap-2.5"
+              className="w-full sm:w-auto relative group overflow-hidden px-6 py-3 rounded-full text-sm font-medium text-black bg-white hover:bg-neutral-200 transition-colors flex items-center justify-center gap-2"
             >
-              <Bot className="w-4 h-4 text-cyan-200 animate-bounce" />
-              <span>EXPLORE AI LAB</span>
-              <ArrowRight className="w-4 h-4 text-cyan-200 group-hover:translate-x-1 transition-transform" />
+              <Bot className="w-4 h-4" />
+              <span>Explore AI Lab</span>
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
             </Link>
 
             {/* Secondary Join CTA */}
@@ -94,10 +94,10 @@ export default function HeroSection({ background }: HeroSectionProps = {}) {
               href="/join"
               onClick={playClick}
               onMouseEnter={playHover}
-              className="w-full sm:w-auto px-6 py-3.5 rounded-2xl font-mono text-sm font-semibold text-slate-200 bg-[#0a0a0a]/80 hover:bg-slate-800/80 border border-cyan-500/30 hover:border-cyan-400 transition-all flex items-center justify-center gap-2"
+              className="w-full sm:w-auto px-6 py-3 rounded-full text-sm font-medium text-white bg-white/[0.03] hover:bg-white/[0.08] border border-white/15 hover:border-white/30 transition-colors flex items-center justify-center gap-2"
             >
-              <Sparkles className="w-4 h-4 text-violet-400" />
-              <span>JOIN THE CLUB</span>
+              <Sparkles className="w-4 h-4 text-neutral-400" />
+              <span>Join the Club</span>
             </Link>
           </motion.div>
 
@@ -106,7 +106,7 @@ export default function HeroSection({ background }: HeroSectionProps = {}) {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.5 }}
-            className="pt-6 grid grid-cols-3 gap-3 sm:gap-6 border-t border-cyan-500/15 font-mono text-center sm:text-left max-w-md mx-auto lg:mx-0"
+            className="pt-6 grid grid-cols-3 gap-3 sm:gap-6 border-t border-white/10 font-mono text-center sm:text-left max-w-md mx-auto lg:mx-0"
           >
             <div>
               <div className="text-xl sm:text-2xl font-extrabold text-cyan-300">

@@ -62,6 +62,18 @@
   --color-fuchsia-400: #b8b8b8;
   --color-fuchsia-500: #999999;
   --color-fuchsia-950: #0b0b0b;
+
+  --color-slate-50: #fafafa;
+  --color-slate-100: #f5f5f5;
+  --color-slate-200: #e5e5e5;
+  --color-slate-300: #d4d4d4;
+  --color-slate-400: #a3a3a3;
+  --color-slate-500: #737373;
+  --color-slate-600: #525252;
+  --color-slate-700: #404040;
+  --color-slate-800: #262626;
+  --color-slate-900: #171717;
+  --color-slate-950: #0a0a0a;
 }
 
 @layer base {
@@ -78,7 +90,7 @@
   }
 
   * {
-    border-color: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.08);
   }
 
   body {
@@ -108,29 +120,29 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #ffffff, #8a8a8a);
+  background: #3a3a3a;
   border-radius: 9999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, #e5e5e5, #a3a3a3);
+  background: #5c5c5c;
 }
 
 /* Glassmorphic Cyber Panels */
 .glass-panel {
-  background: rgba(10, 10, 10, 0.7);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  background: rgba(12, 12, 12, 0.72);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
 }
 
 .glass-panel-glow {
-  background: rgba(10, 10, 10, 0.8);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.35);
-  box-shadow: 0 0 25px rgba(255, 255, 255, 0.15), inset 0 0 15px rgba(255, 255, 255, 0.05);
+  background: rgba(14, 14, 14, 0.8);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
 }
 
 .cyber-grid-bg {
@@ -146,16 +158,19 @@
 }
 
 /* Glow Text & Elements */
-.text-glow-cyan {
-  text-shadow: 0 0 12px rgba(255, 255, 255, 0.6), 0 0 24px rgba(255, 255, 255, 0.3);
-}
-
+.text-glow-cyan,
 .text-glow-purple {
-  text-shadow: 0 0 12px rgba(200, 200, 200, 0.6), 0 0 24px rgba(200, 200, 200, 0.3);
+  text-shadow: none;
 }
 
 .border-glow-cyan {
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+  box-shadow: none;
+}
+
+/* Keeps the fixed dot wave visible at the horizon while content areas stay readable */
+.content-veil {
+  background:
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.35) 45%, rgba(0, 0, 0, 0.1) 75%, rgba(0, 0, 0, 0) 100%);
 }
 
 /* Scanline Overlay */

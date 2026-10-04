@@ -86,7 +86,7 @@ export default function Preloader() {
                 cy="50"
                 r="45"
                 fill="none"
-                stroke="#00CFFF"
+                stroke="#FFFFFF"
                 strokeWidth="0.5"
                 strokeDasharray="4 4"
                 className="animate-[spin_10s_linear_infinite]"
@@ -97,7 +97,7 @@ export default function Preloader() {
                 cy="50"
                 r="36"
                 fill="none"
-                stroke="#6C63FF"
+                stroke="#8A8A8A"
                 strokeWidth="1"
                 strokeDasharray="8 6"
                 className="animate-[spin_6s_linear_infinite_reverse]"
@@ -110,7 +110,7 @@ export default function Preloader() {
                 y1="50"
                 x2="25"
                 y2="28"
-                stroke="#00CFFF"
+                stroke="#FFFFFF"
                 strokeWidth="1.5"
                 initial={{ pathLength: 0 }}
                 animate={{ pathLength: phase >= 0 ? 1 : 0 }}
@@ -121,7 +121,7 @@ export default function Preloader() {
                 y1="50"
                 x2="75"
                 y2="28"
-                stroke="#00F5D4"
+                stroke="#D4D4D4"
                 strokeWidth="1.5"
                 initial={{ pathLength: 0 }}
                 animate={{ pathLength: phase >= 1 ? 1 : 0 }}
@@ -132,7 +132,7 @@ export default function Preloader() {
                 y1="50"
                 x2="80"
                 y2="65"
-                stroke="#9B5CFF"
+                stroke="#8A8A8A"
                 strokeWidth="1.5"
                 initial={{ pathLength: 0 }}
                 animate={{ pathLength: phase >= 1 ? 1 : 0 }}
@@ -143,7 +143,7 @@ export default function Preloader() {
                 y1="50"
                 x2="50"
                 y2="82"
-                stroke="#6C63FF"
+                stroke="#8A8A8A"
                 strokeWidth="1.5"
                 initial={{ pathLength: 0 }}
                 animate={{ pathLength: phase >= 2 ? 1 : 0 }}
@@ -154,7 +154,7 @@ export default function Preloader() {
                 y1="50"
                 x2="20"
                 y2="65"
-                stroke="#00CFFF"
+                stroke="#FFFFFF"
                 strokeWidth="1.5"
                 initial={{ pathLength: 0 }}
                 animate={{ pathLength: phase >= 2 ? 1 : 0 }}
@@ -162,15 +162,15 @@ export default function Preloader() {
               />
 
               {/* Surrounding Nodes */}
-              <circle cx="25" cy="28" r="3.5" fill="#00CFFF" className="animate-pulse" />
-              <circle cx="75" cy="28" r="3.5" fill="#00F5D4" className="animate-pulse" />
-              <circle cx="80" cy="65" r="3.5" fill="#9B5CFF" className="animate-pulse" />
-              <circle cx="50" cy="82" r="3.5" fill="#6C63FF" className="animate-pulse" />
-              <circle cx="20" cy="65" r="3.5" fill="#00CFFF" className="animate-pulse" />
+              <circle cx="25" cy="28" r="3.5" fill="#FFFFFF" className="animate-pulse" />
+              <circle cx="75" cy="28" r="3.5" fill="#D4D4D4" className="animate-pulse" />
+              <circle cx="80" cy="65" r="3.5" fill="#8A8A8A" className="animate-pulse" />
+              <circle cx="50" cy="82" r="3.5" fill="#8A8A8A" className="animate-pulse" />
+              <circle cx="20" cy="65" r="3.5" fill="#FFFFFF" className="animate-pulse" />
 
               {/* Glowing Core Center Node */}
-              <circle cx="50" cy="50" r="8" fill="#00CFFF" opacity="0.2" />
-              <circle cx="50" cy="50" r="5" fill="#00CFFF" />
+              <circle cx="50" cy="50" r="8" fill="#FFFFFF" opacity="0.2" />
+              <circle cx="50" cy="50" r="5" fill="#FFFFFF" />
             </svg>
           </div>
 

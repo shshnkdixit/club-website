@@ -66,10 +66,10 @@ export default function HeroNeuralCore() {
     const nodes: THREE.Vector3[] = [];
     const nodeColors: THREE.Color[] = [];
     const colorsList = [
-      new THREE.Color('#00CFFF'), // Cyan
-      new THREE.Color('#6C63FF'), // Indigo
-      new THREE.Color('#9B5CFF'), // Violet
-      new THREE.Color('#00F5D4'), // Mint
+      new THREE.Color('#FFFFFF'), // Cyan
+      new THREE.Color('#8A8A8A'), // Indigo
+      new THREE.Color('#8A8A8A'), // Violet
+      new THREE.Color('#D4D4D4'), // Mint
       new THREE.Color('#38BDF8')  // Sky
     ];
 
@@ -128,7 +128,7 @@ export default function HeroNeuralCore() {
     const lineGeo = new THREE.BufferGeometry();
     lineGeo.setAttribute('position', new THREE.Float32BufferAttribute(linePositions, 3));
     const lineMat = new THREE.LineBasicMaterial({
-      color: 0x00cfff,
+      color: 0xffffff,
       transparent: true,
       opacity: 0.28,
       blending: THREE.AdditiveBlending
@@ -154,7 +154,7 @@ export default function HeroNeuralCore() {
     // 2. Outer Neon Aqua/Mint Geodesic Cage
     const outerLatticeGeo = new THREE.IcosahedronGeometry(1.4, 1);
     const outerLatticeMat = new THREE.MeshBasicMaterial({
-      color: 0x00f5d4, // Neon Mint / Electric Aqua
+      color: 0xd4d4d4, // Neon Mint / Electric Aqua
       wireframe: true,
       transparent: true,
       opacity: 0.6,
@@ -166,7 +166,7 @@ export default function HeroNeuralCore() {
     // 3. Inner Radiant Holographic Glow Sphere
     const innerGlowGeo = new THREE.SphereGeometry(0.88, 32, 32);
     const innerGlowMat = new THREE.MeshBasicMaterial({
-      color: 0x00cfff, // Glowing Electric Blue/Cyan Core
+      color: 0xffffff, // Glowing Electric Blue/Cyan Core
       transparent: true,
       opacity: 0.25,
       blending: THREE.AdditiveBlending
@@ -199,7 +199,7 @@ export default function HeroNeuralCore() {
     dustGeo.setAttribute('position', new THREE.Float32BufferAttribute(dustCoords, 3));
     const dustMat = new THREE.PointsMaterial({
       size: 0.04,
-      color: 0x00f5d4,
+      color: 0xd4d4d4,
       transparent: true,
       opacity: 0.6,
       blending: THREE.AdditiveBlending
@@ -325,7 +325,7 @@ export default function HeroNeuralCore() {
                   setActiveConcept(activeConcept?.name === concept.name ? null : concept);
                 }}
                 onMouseEnter={() => soundFx.playHover()}
-                className="group relative flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#0a0a0a]/80 backdrop-blur-md border border-cyan-500/30 hover:border-cyan-400 shadow-[0_0_15px_rgba(0,207,255,0.2)] hover:shadow-[0_0_20px_rgba(0,207,255,0.5)] transition-all transform hover:scale-105 active:scale-95"
+                className="group relative flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#0a0a0a]/80 backdrop-blur-md border border-cyan-500/30 hover:border-cyan-400 shadow-none hover:shadow-none transition-all transform hover:scale-105 active:scale-95"
               >
                 <span className="w-2 h-2 rounded-full bg-cyan-400 animate-ping" />
                 <span className="text-[11px] sm:text-xs font-mono font-bold text-slate-200 group-hover:text-cyan-300">
@@ -347,7 +347,7 @@ export default function HeroNeuralCore() {
             initial={{ opacity: 0, scale: 0.9, y: 10 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.9, y: 10 }}
-            className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 w-[90%] max-w-md p-4 rounded-2xl bg-[#0a0a0a]/95 backdrop-blur-xl border border-cyan-400/50 shadow-[0_0_30px_rgba(0,207,255,0.3)] font-mono text-xs"
+            className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 w-[90%] max-w-md p-4 rounded-2xl bg-[#0a0a0a]/95 backdrop-blur-xl border border-cyan-400/50 shadow-none font-mono text-xs"
           >
             <div className="flex items-center justify-between border-b border-cyan-500/20 pb-2 mb-2">
               <span className="text-cyan-400 font-bold tracking-wider uppercase flex items-center gap-1.5">

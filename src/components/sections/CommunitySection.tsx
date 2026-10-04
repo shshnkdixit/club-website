@@ -18,8 +18,8 @@ export default function CommunitySection() {
       desc: 'Live voice rooms, coding squads, study sprints & paper discussions.',
       url: settings.socialLinks.discord,
       icon: MessageSquare,
-      color: '#6C63FF',
-      glow: 'hover:border-indigo-500/50 hover:shadow-[0_0_25px_rgba(108,99,255,0.3)]',
+      color: '#8A8A8A',
+      glow: 'hover:border-indigo-500/50 hover:shadow-none',
       members: '1,200+ Online'
     },
     {
@@ -28,7 +28,7 @@ export default function CommunitySection() {
       desc: 'Instant broadcast alerts for workshop seats, room numbers, and hackathons.',
       url: settings.socialLinks.whatsapp,
       icon: MessageCircle,
-      color: '#10B981',
+      color: '#A3A3A3',
       glow: 'hover:border-emerald-500/50 hover:shadow-[0_0_25px_rgba(16,185,129,0.3)]',
       members: '580+ Members'
     },
@@ -48,8 +48,8 @@ export default function CommunitySection() {
       desc: 'Alumni career pathways, industry sponsorship announcements & events.',
       url: settings.socialLinks.linkedin,
       icon: Linkedin,
-      color: '#00CFFF',
-      glow: 'hover:border-cyan-500/50 hover:shadow-[0_0_25px_rgba(0,207,255,0.3)]',
+      color: '#FFFFFF',
+      glow: 'hover:border-cyan-500/50 hover:shadow-none',
       members: '3,400+ Followers'
     },
     {
@@ -58,7 +58,7 @@ export default function CommunitySection() {
       desc: 'Laboratory behind-the-scenes, hardware timelapses, and event recaps.',
       url: settings.socialLinks.instagram,
       icon: Instagram,
-      color: '#EC4899',
+      color: '#A3A3A3',
       glow: 'hover:border-pink-500/50 hover:shadow-[0_0_25px_rgba(236,72,153,0.3)]',
       members: '2,800+ Followers'
     }
@@ -146,7 +146,7 @@ export default function CommunitySection() {
             className="p-6 rounded-3xl bg-gradient-to-br from-cyan-950/60 via-slate-900 to-violet-950/60 border border-cyan-500/40 flex flex-col justify-between"
           >
             <div>
-              <div className="w-12 h-12 rounded-2xl bg-cyan-500/20 border border-cyan-400 flex items-center justify-center text-cyan-300 mb-4 shadow-[0_0_15px_rgba(0,207,255,0.4)]">
+              <div className="w-12 h-12 rounded-2xl bg-cyan-500/20 border border-cyan-400 flex items-center justify-center text-cyan-300 mb-4 shadow-none">
                 <Bot className="w-6 h-6 animate-bounce" />
               </div>
               <h3 className="font-mono font-bold text-lg text-white mb-2">
@@ -171,7 +171,7 @@ export default function CommunitySection() {
         </div>
 
         {/* Global Join CTA Box */}
-        <div className="p-8 sm:p-12 rounded-3xl bg-gradient-to-r from-cyan-950/70 via-slate-900 to-violet-950/70 border border-cyan-500/40 shadow-[0_0_50px_rgba(0,207,255,0.2)] text-center space-y-6">
+        <div className="p-8 sm:p-12 rounded-3xl bg-gradient-to-r from-cyan-950/70 via-slate-900 to-violet-950/70 border border-cyan-500/40 shadow-none text-center space-y-6">
           <h3 className="text-3xl sm:text-4xl font-extrabold text-white font-mono">
             READY TO JOIN THE REVOLUTION?
           </h3>
@@ -182,7 +182,7 @@ export default function CommunitySection() {
             <Link
               href="/join"
               onClick={() => soundFx.playClick()}
-              className="w-full sm:w-auto px-8 py-4 rounded-2xl font-mono text-sm font-bold text-white bg-gradient-to-r from-cyan-500 via-indigo-500 to-violet-600 hover:from-cyan-400 hover:to-violet-500 shadow-[0_0_30px_rgba(0,207,255,0.4)] transition-all transform hover:scale-105 active:scale-95 flex items-center justify-center gap-2"
+              className="w-full sm:w-auto px-8 py-4 rounded-2xl font-mono text-sm font-bold text-black bg-white hover:bg-neutral-200 shadow-none transition-all transform hover:scale-105 active:scale-95 flex items-center justify-center gap-2"
             >
               <Sparkles className="w-4 h-4" />
               <span>APPLY FOR MEMBERSHIP</span>

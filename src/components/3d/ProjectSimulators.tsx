@@ -9,9 +9,9 @@ export function CVSimulator() {
   const [threshold, setThreshold] = useState(0.85);
   const [fps, setFps] = useState(118);
   const [detectedObjects, setDetectedObjects] = useState([
-    { id: 1, label: 'Person (Researcher)', score: 0.98, x: 22, y: 28, w: 32, h: 56, color: '#00CFFF' },
-    { id: 2, label: 'NVIDIA Jetson Board', score: 0.96, x: 62, y: 48, w: 26, h: 36, color: '#00F5D4' },
-    { id: 3, label: '6-DoF Robot Gripper', score: 0.91, x: 12, y: 15, w: 22, h: 24, color: '#9B5CFF' }
+    { id: 1, label: 'Person (Researcher)', score: 0.98, x: 22, y: 28, w: 32, h: 56, color: '#FFFFFF' },
+    { id: 2, label: 'NVIDIA Jetson Board', score: 0.96, x: 62, y: 48, w: 26, h: 36, color: '#D4D4D4' },
+    { id: 3, label: '6-DoF Robot Gripper', score: 0.91, x: 12, y: 15, w: 22, h: 24, color: '#8A8A8A' }
   ]);
 
   useEffect(() => {
@@ -31,7 +31,7 @@ export function CVSimulator() {
   const visibleObjects = detectedObjects.filter(o => o.score >= threshold);
 
   return (
-    <div className="bg-[#070D1F] border border-cyan-500/30 rounded-2xl p-4 font-mono text-xs text-slate-200">
+    <div className="bg-[#0A0A0A] border border-cyan-500/30 rounded-2xl p-4 font-mono text-xs text-slate-200">
       {/* HUD Header */}
       <div className="flex items-center justify-between border-b border-cyan-500/20 pb-2.5 mb-3">
         <div className="flex items-center gap-2">
@@ -140,7 +140,7 @@ export function RoboticsArmSimulator() {
   };
 
   return (
-    <div className="bg-[#070D1F] border border-rose-500/30 rounded-2xl p-4 font-mono text-xs text-slate-200">
+    <div className="bg-[#0A0A0A] border border-rose-500/30 rounded-2xl p-4 font-mono text-xs text-slate-200">
       <div className="flex items-center justify-between border-b border-rose-500/20 pb-2.5 mb-3">
         <div className="flex items-center gap-2">
           <Bot className="w-4 h-4 text-rose-400 animate-pulse" />
@@ -170,7 +170,7 @@ export function RoboticsArmSimulator() {
             y1="170"
             x2={200 + Math.sin(rad(shoulderAngle)) * 70}
             y2={170 - Math.cos(rad(shoulderAngle)) * 70}
-            stroke="#00CFFF"
+            stroke="#FFFFFF"
             strokeWidth="8"
             strokeLinecap="round"
           />
@@ -178,7 +178,7 @@ export function RoboticsArmSimulator() {
             cx={200 + Math.sin(rad(shoulderAngle)) * 70}
             cy={170 - Math.cos(rad(shoulderAngle)) * 70}
             r="8"
-            fill="#6C63FF"
+            fill="#8A8A8A"
           />
 
           {/* Elbow -> Wrist */}
@@ -187,7 +187,7 @@ export function RoboticsArmSimulator() {
             y1={170 - Math.cos(rad(shoulderAngle)) * 70}
             x2={200 + Math.sin(rad(shoulderAngle)) * 70 + Math.sin(rad(shoulderAngle + elbowAngle)) * 60}
             y2={170 - Math.cos(rad(shoulderAngle)) * 70 - Math.cos(rad(shoulderAngle + elbowAngle)) * 60}
-            stroke="#9B5CFF"
+            stroke="#8A8A8A"
             strokeWidth="6"
             strokeLinecap="round"
           />
@@ -197,7 +197,7 @@ export function RoboticsArmSimulator() {
             cx={200 + Math.sin(rad(shoulderAngle)) * 70 + Math.sin(rad(shoulderAngle + elbowAngle)) * 60}
             cy={170 - Math.cos(rad(shoulderAngle)) * 70 - Math.cos(rad(shoulderAngle + elbowAngle)) * 60}
             r="6"
-            fill={gripperClosed ? '#10B981' : '#F59E0B'}
+            fill={gripperClosed ? '#A3A3A3' : '#F59E0B'}
           />
         </svg>
 
@@ -280,7 +280,7 @@ export function NeuralWeightsSimulator() {
   };
 
   return (
-    <div className="bg-[#070D1F] border border-violet-500/30 rounded-2xl p-4 font-mono text-xs text-slate-200">
+    <div className="bg-[#0A0A0A] border border-violet-500/30 rounded-2xl p-4 font-mono text-xs text-slate-200">
       <div className="flex items-center justify-between border-b border-violet-500/20 pb-2.5 mb-3">
         <div className="flex items-center gap-2">
           <Cpu className="w-4 h-4 text-violet-400 animate-pulse" />
@@ -353,7 +353,7 @@ export function AgentGraphSimulator() {
   };
 
   return (
-    <div className="bg-[#070D1F] border border-pink-500/30 rounded-2xl p-4 font-mono text-xs text-slate-200">
+    <div className="bg-[#0A0A0A] border border-pink-500/30 rounded-2xl p-4 font-mono text-xs text-slate-200">
       <div className="flex items-center justify-between border-b border-pink-500/20 pb-2.5 mb-3">
         <div className="flex items-center gap-2">
           <Workflow className="w-4 h-4 text-pink-400 animate-pulse" />

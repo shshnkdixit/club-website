@@ -74,7 +74,7 @@ export default function ResearchSection() {
               transition={{ duration: 0.4, delay: idx * 0.1 }}
               onClick={() => handleOpenPaper(paper)}
               onMouseEnter={() => soundFx.playHover()}
-              className="group cursor-pointer p-6 sm:p-7 rounded-3xl bg-[#0a0a0a]/80 backdrop-blur-md border border-cyan-500/20 hover:border-cyan-400/60 shadow-[0_4px_25px_rgba(0,0,0,0.3)] hover:shadow-[0_0_30px_rgba(0,207,255,0.2)] transition-all flex flex-col justify-between transform hover:-translate-y-1"
+              className="group cursor-pointer p-6 sm:p-7 rounded-3xl bg-[#0a0a0a]/80 backdrop-blur-md border border-cyan-500/20 hover:border-cyan-400/60 shadow-[0_4px_25px_rgba(0,0,0,0.3)] hover:shadow-none transition-all flex flex-col justify-between transform hover:-translate-y-1"
             >
               <div>
                 {/* Status & Conference */}
@@ -159,7 +159,7 @@ export default function ResearchSection() {
                 initial={{ opacity: 0, scale: 0.95, y: 15 }}
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.95, y: 15 }}
-                className="relative w-full max-w-2xl bg-[#0a0a0a] border border-cyan-500/40 rounded-3xl p-6 sm:p-8 shadow-[0_0_50px_rgba(0,207,255,0.3)] z-10 font-mono text-xs overflow-y-auto max-h-[85vh]"
+                className="relative w-full max-w-2xl bg-[#0a0a0a] border border-cyan-500/40 rounded-3xl p-6 sm:p-8 shadow-none z-10 font-mono text-xs overflow-y-auto max-h-[85vh]"
               >
                 <div className="flex items-center justify-between border-b border-cyan-500/20 pb-4 mb-4">
                   <div>

@@ -86,7 +86,7 @@ export default function ProjectsSection() {
                 }}
                 className={`px-4 py-2 rounded-xl transition-all whitespace-nowrap border ${
                   isSelected
-                    ? 'bg-cyan-500/20 text-cyan-300 border-cyan-400 font-bold shadow-[0_0_15px_rgba(0,207,255,0.3)]'
+                    ? 'bg-cyan-500/20 text-cyan-300 border-cyan-400 font-bold shadow-none'
                     : 'bg-slate-900/60 text-slate-400 border-slate-800 hover:border-slate-700 hover:text-slate-200'
                 }`}
               >
@@ -105,7 +105,7 @@ export default function ProjectsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: idx * 0.1 }}
-              className="group rounded-3xl bg-[#0a0a0a]/80 backdrop-blur-md border border-cyan-500/20 hover:border-cyan-400/60 shadow-[0_4px_25px_rgba(0,0,0,0.4)] hover:shadow-[0_0_30px_rgba(0,207,255,0.25)] transition-all duration-300 flex flex-col overflow-hidden transform hover:-translate-y-1.5"
+              className="group rounded-3xl bg-[#0a0a0a]/80 backdrop-blur-md border border-cyan-500/20 hover:border-cyan-400/60 shadow-[0_4px_25px_rgba(0,0,0,0.4)] hover:shadow-none transition-all duration-300 flex flex-col overflow-hidden transform hover:-translate-y-1.5"
             >
               {/* Project Image & Interactive Simulator Banner */}
               <div className="relative h-48 w-full overflow-hidden bg-slate-950">
@@ -125,7 +125,7 @@ export default function ProjectsSection() {
                 {project.simulatorType && project.simulatorType !== 'none' && (
                   <button
                     onClick={() => handleOpenSimulator(project)}
-                    className="absolute top-3 right-3 px-2.5 py-1 rounded-lg bg-cyan-500/20 hover:bg-cyan-500/40 backdrop-blur-md border border-cyan-400 text-[10px] font-mono text-cyan-200 font-bold flex items-center gap-1.5 shadow-[0_0_15px_rgba(0,207,255,0.4)]"
+                    className="absolute top-3 right-3 px-2.5 py-1 rounded-lg bg-cyan-500/20 hover:bg-cyan-500/40 backdrop-blur-md border border-cyan-400 text-[10px] font-mono text-cyan-200 font-bold flex items-center gap-1.5 shadow-none"
                   >
                     <Maximize2 className="w-3 h-3" />
                     <span>LAUNCH SIMULATOR</span>
@@ -223,7 +223,7 @@ export default function ProjectsSection() {
                 initial={{ opacity: 0, scale: 0.95, y: 15 }}
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.95, y: 15 }}
-                className="relative w-full max-w-3xl bg-[#0a0a0a] border border-cyan-500/40 rounded-3xl p-6 sm:p-8 shadow-[0_0_60px_rgba(0,207,255,0.3)] z-10 font-mono text-xs overflow-y-auto max-h-[90vh]"
+                className="relative w-full max-w-3xl bg-[#0a0a0a] border border-cyan-500/40 rounded-3xl p-6 sm:p-8 shadow-none z-10 font-mono text-xs overflow-y-auto max-h-[90vh]"
               >
                 <div className="flex items-center justify-between border-b border-cyan-500/20 pb-4 mb-4">
                   <div>

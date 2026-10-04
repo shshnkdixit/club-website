@@ -67,10 +67,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable} dark scroll-smooth`} suppressHydrationWarning>
-      <body className="min-h-screen bg-[#000000] text-[#F5F7FF] flex flex-col antialiased selection:bg-cyan-400 selection:text-black overflow-x-hidden relative">
+      <body className="min-h-screen bg-[#000000] text-[#EDEDED] flex flex-col antialiased selection:bg-white selection:text-black overflow-x-hidden relative">
         <ThemeProvider attribute="class" defaultTheme="dark" forcedTheme="dark" enableSystem={false}>
         {/* Full-Page Animated Dotted Wave Background */}
-        <DottedSurface className="z-0" />
+        <DottedSurface className="z-0" opacity={0.55} />
+        <div aria-hidden="true" className="content-veil pointer-events-none fixed inset-0 z-0" />
 
         {/* Futuristic Node-Linking Boot Initializer */}
         <Preloader />

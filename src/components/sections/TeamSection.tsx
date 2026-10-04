@@ -64,12 +64,12 @@ export default function TeamSection() {
               transition={{ duration: 0.4, delay: idx * 0.1 }}
               onClick={() => handleOpenMember(member)}
               onMouseEnter={() => soundFx.playHover()}
-              className="group cursor-pointer p-6 rounded-3xl bg-[#0a0a0a]/80 backdrop-blur-md border border-cyan-500/20 hover:border-cyan-400/60 shadow-[0_4px_25px_rgba(0,0,0,0.3)] hover:shadow-[0_0_30px_rgba(0,207,255,0.25)] transition-all flex flex-col justify-between transform hover:-translate-y-1.5"
+              className="group cursor-pointer p-6 rounded-3xl bg-[#0a0a0a]/80 backdrop-blur-md border border-cyan-500/20 hover:border-cyan-400/60 shadow-[0_4px_25px_rgba(0,0,0,0.3)] hover:shadow-none transition-all flex flex-col justify-between transform hover:-translate-y-1.5"
             >
               <div>
                 {/* Avatar & Role Header */}
                 <div className="flex items-center gap-4 mb-4">
-                  <div className="relative w-16 h-16 rounded-2xl overflow-hidden bg-slate-900 border-2 border-cyan-500/40 p-[1px] group-hover:border-cyan-400 transition-colors shadow-[0_0_15px_rgba(0,207,255,0.3)]">
+                  <div className="relative w-16 h-16 rounded-2xl overflow-hidden bg-slate-900 border-2 border-cyan-500/40 p-[1px] group-hover:border-cyan-400 transition-colors shadow-none">
                     <img
                       src={member.avatar}
                       alt={member.name}
@@ -158,7 +158,7 @@ export default function TeamSection() {
                 initial={{ opacity: 0, scale: 0.95, y: 15 }}
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.95, y: 15 }}
-                className="relative w-full max-w-lg bg-[#0a0a0a] border border-cyan-500/40 rounded-3xl p-6 sm:p-8 shadow-[0_0_50px_rgba(0,207,255,0.3)] z-10 font-mono text-xs overflow-y-auto max-h-[85vh]"
+                className="relative w-full max-w-lg bg-[#0a0a0a] border border-cyan-500/40 rounded-3xl p-6 sm:p-8 shadow-none z-10 font-mono text-xs overflow-y-auto max-h-[85vh]"
               >
                 <div className="flex items-start justify-between border-b border-cyan-500/20 pb-4 mb-4">
                   <div className="flex items-center gap-4">

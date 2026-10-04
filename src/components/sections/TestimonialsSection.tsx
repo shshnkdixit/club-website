@@ -56,7 +56,7 @@ export default function TestimonialsSection() {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: -15 }}
             transition={{ duration: 0.4 }}
-            className="p-8 sm:p-12 rounded-3xl bg-[#0a0a0a]/90 backdrop-blur-xl border border-cyan-500/30 shadow-[0_0_50px_rgba(0,207,255,0.15)] relative font-mono text-xs"
+            className="p-8 sm:p-12 rounded-3xl bg-[#0a0a0a]/90 backdrop-blur-xl border border-cyan-500/30 shadow-none relative font-mono text-xs"
           >
             <Quote className="w-10 h-10 text-cyan-500/30 absolute top-6 right-8" />
 
