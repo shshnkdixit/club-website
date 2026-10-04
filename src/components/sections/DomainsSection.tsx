@@ -101,29 +101,31 @@ function DomainStopwatch({ domain, index }: { domain: AIDomain; index: number })
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-40px' }}
       transition={{ duration: 0.45, delay: index * 0.04 }}
-      className={`relative overflow-hidden rounded-[2rem] border bg-black/55 backdrop-blur-xl transition-colors duration-500 ${isOpen ? 'sm:col-span-2 lg:col-span-2' : ''}`}
-      style={{ borderColor: isRunning || isOpen ? `${domain.color}80` : `${domain.color}35` }}
+      className={`relative flex flex-col items-center overflow-visible transition-colors duration-500 ${isOpen ? 'sm:col-span-2 lg:col-span-2' : ''}`}
+      style={{ filter: isRunning || isOpen ? `drop-shadow(0 0 24px ${domain.color}22)` : undefined }}
     >
       <button
         type="button"
         onClick={handlePress}
         aria-expanded={isOpen}
+        aria-live="polite"
         aria-label={`${isRunning ? 'Stop' : isOpen ? 'Collapse' : 'Start'} ${domain.name} stopwatch`}
-        className="group relative flex min-h-[260px] w-full flex-col items-center justify-center overflow-hidden p-6 text-center outline-none focus-visible:ring-2 focus-visible:ring-white/80 focus-visible:ring-inset"
+        className="group relative flex min-h-[315px] w-full flex-col items-center justify-center overflow-visible p-4 text-center outline-none focus-visible:ring-2 focus-visible:ring-white/80 focus-visible:ring-inset"
       >
-        <div className="absolute inset-0 opacity-20" style={{ background: `radial-gradient(circle at 50% 35%, ${domain.color}, transparent 60%)` }} />
-        <div className={`absolute inset-5 rounded-[1.5rem] border border-dashed transition-transform duration-700 ${isRunning ? 'animate-spin' : ''}`} style={{ borderColor: `${domain.color}25`, animationDuration: '18s' }} />
-        <div className="relative flex size-44 items-center justify-center rounded-full border-2 transition-all duration-500" style={{ borderColor: `${domain.color}${isRunning || isOpen ? 'cc' : '65'}`, boxShadow: isRunning ? `0 0 32px ${domain.color}45, inset 0 0 24px ${domain.color}18` : `inset 0 0 20px ${domain.color}12` }}>
-          <div className={`absolute inset-2 rounded-full border transition-all duration-500 ${isRunning ? 'animate-pulse' : ''}`} style={{ borderColor: `${domain.color}35` }} />
-          <div className="absolute -top-3 rounded-full border bg-black px-3 py-1 font-mono text-[9px] tracking-[0.28em] text-slate-400" style={{ borderColor: `${domain.color}60` }}>CH {String(index + 1).padStart(2, '0')}</div>
-          <div className="relative flex flex-col items-center gap-2">
-            <Icon className="size-5" style={{ color: domain.color }} />
-            <span className="font-mono text-2xl font-semibold tracking-[0.12em] text-white">{formatElapsed(elapsed)}</span>
-            <span className="font-mono text-[9px] tracking-[0.3em]" style={{ color: domain.color }}>{stateLabel}</span>
+        <div className="pointer-events-none absolute inset-x-4 top-1/2 h-56 -translate-y-1/2 rounded-full opacity-30" style={{ background: `radial-gradient(circle, ${domain.color}35 0%, transparent 68%)` }} />
+        <div className={`relative mt-7 flex size-56 items-center justify-center rounded-full border-[12px] border-slate-500/80 bg-[radial-gradient(circle_at_35%_25%,#f8fafc,#64748b_42%,#111827_76%)] shadow-[inset_0_2px_4px_#fff,inset_0_-8px_16px_#020617,0_10px_20px_#000] transition-transform duration-700 group-hover:scale-[1.02] ${isRunning ? 'motion-safe:animate-[watch-shake_0.12s_linear_infinite]' : ''}`}>
+          <div className="absolute -top-14 flex flex-col items-center"><div className="size-9 rounded-full border-4 border-slate-500 bg-gradient-to-b from-slate-200 to-slate-700 shadow-lg" /><div className="-mt-1 h-8 w-3 rounded-full bg-gradient-to-r from-slate-300 via-slate-700 to-slate-200" /></div>
+          <div className="absolute -top-20 size-14 rounded-full border-[5px] border-slate-400/80" />
+          <div className="absolute inset-2 rounded-full border border-slate-800/70 bg-[radial-gradient(circle,#f8fafc_0%,#cbd5e1_68%,#475569_100%)] shadow-[inset_0_0_10px_#0f172a]">
+            <div className="absolute inset-3 rounded-full border border-slate-500/70" />
+            <div className="absolute inset-0 opacity-40" style={{ background: `repeating-conic-gradient(from 0deg, ${domain.color} 0deg 1deg, transparent 1deg 30deg)` }} />
+            <div className="absolute left-1/2 top-1/2 h-[36%] w-0.5 origin-bottom -translate-x-1/2 -translate-y-full rounded-full bg-slate-900 shadow-[0_0_2px_#fff] transition-transform duration-100" style={{ transform: `translateX(-50%) rotate(${(elapsed / 1000) * 6}deg)`, transformOrigin: '50% 100%' }} />
+            <div className="absolute left-1/2 top-1/2 size-4 -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-slate-700 bg-slate-300 shadow-inner" />
+            <div className="absolute inset-0 flex flex-col items-center justify-center gap-1 pt-10"><Icon className="size-4" style={{ color: domain.color }} /><span className="font-mono text-[17px] font-bold tracking-[0.08em] text-slate-900">{formatElapsed(elapsed)}</span><span className="font-mono text-[7px] tracking-[0.3em] text-slate-600">{stateLabel}</span></div>
           </div>
-          <span className="absolute -right-2 top-1/2 size-2 -translate-y-1/2 rounded-full" style={{ backgroundColor: domain.color, boxShadow: `0 0 12px ${domain.color}` }} />
+          <span className="absolute -right-5 top-1/2 size-3 -translate-y-1/2 rounded-full border border-slate-300 bg-slate-800" style={{ boxShadow: `0 0 14px ${domain.color}` }} />
         </div>
-        <span className="relative mt-5 max-w-[210px] font-mono text-xs font-semibold uppercase tracking-[0.13em] text-slate-300 transition-colors group-hover:text-white">{domain.name}</span>
+        <span className="relative mt-4 max-w-[220px] font-mono text-[11px] font-semibold uppercase tracking-[0.16em] text-slate-300 transition-colors group-hover:text-white">{domain.name}</span>
         <span className="relative mt-2 font-mono text-[9px] tracking-[0.18em] text-slate-600">{isRunning ? 'TAP TO STOP & REVEAL' : isOpen ? 'TAP TO COLLAPSE' : 'TAP TO INITIALIZE'}</span>
       </button>
 

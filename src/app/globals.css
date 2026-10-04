@@ -206,6 +206,11 @@
   font-family: var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 }
 
+@keyframes watch-shake {
+  0%, 100% { transform: translate3d(0, 0, 0) rotate(0deg); }
+  50% { transform: translate3d(0.5px, -0.5px, 0) rotate(0.4deg); }
+}
+
 /* Reduced motion respect */
 @media (prefers-reduced-motion: reduce) {
   *, ::before, ::after {
