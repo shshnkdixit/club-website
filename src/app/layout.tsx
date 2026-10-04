@@ -5,7 +5,8 @@ import Navbar from '@/components/common/Navbar';
 import Footer from '@/components/common/Footer';
 import CustomCursor from '@/components/common/CustomCursor';
 import Preloader from '@/components/common/Preloader';
-import DottedSurface from '@/components/3d/DottedSurface';
+import DottedSurface from '@/components/ui/dotted-surface';
+import ThemeProvider from '@/components/common/ThemeProvider';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -65,10 +66,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable} dark scroll-smooth`}>
+    <html lang="en" className={`${geistSans.variable} ${geistMono.variable} dark scroll-smooth`} suppressHydrationWarning>
       <body className="min-h-screen bg-[#050816] text-[#F5F7FF] flex flex-col antialiased selection:bg-cyan-400 selection:text-black overflow-x-hidden relative">
+        <ThemeProvider attribute="class" defaultTheme="dark" forcedTheme="dark" enableSystem={false}>
         {/* Full-Page Animated Dotted Wave Background */}
-        <DottedSurface className="fixed inset-0 z-0" opacity={0.7} />
+        <DottedSurface className="z-0" />
 
         {/* Futuristic Node-Linking Boot Initializer */}
         <Preloader />
@@ -86,6 +88,7 @@ export default function RootLayout({
 
         {/* Futuristic Cyber Laboratory Footer */}
         <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );
