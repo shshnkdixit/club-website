@@ -19,14 +19,14 @@ export default function TeamSection() {
   };
 
   return (
-    <section id="team" className="relative py-24 sm:py-32 bg-transparent overflow-hidden">
+    <section id="team" className="relative py-16 sm:py-24 bg-transparent overflow-hidden">
       {/* Background Ambience */}
       <div className="absolute inset-0 cyber-grid-bg opacity-15 pointer-events-none" />
       <div className="absolute top-1/2 left-1/4 w-96 h-96 bg-cyan-600/10 blur-[150px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-5 mb-10">
           <div className="space-y-3">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-[11px] font-mono text-cyan-300">
               <Users className="w-3.5 h-3.5" />
@@ -54,7 +54,7 @@ export default function TeamSection() {
         </div>
 
         {/* Team Holographic Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {team.map((member, idx) => (
             <motion.div
               key={member.id}
@@ -64,7 +64,7 @@ export default function TeamSection() {
               transition={{ duration: 0.4, delay: idx * 0.1 }}
               onClick={() => handleOpenMember(member)}
               onMouseEnter={() => soundFx.playHover()}
-              className="group cursor-pointer p-6 rounded-3xl bg-[#111111]/85 backdrop-blur-md border border-white/10 hover:border-white/25 shadow-[0_4px_25px_rgba(0,0,0,0.3)] hover:shadow-none transition-all flex flex-col justify-between transform hover:-translate-y-1.5"
+              className="group cursor-pointer p-5 rounded-2xl bg-[#111111]/85 backdrop-blur-md border border-white/10 hover:border-white/25 shadow-[0_4px_25px_rgba(0,0,0,0.3)] hover:shadow-none transition-all flex flex-col justify-between transform hover:-translate-y-1.5"
             >
               <div>
                 {/* Avatar & Role Header */}

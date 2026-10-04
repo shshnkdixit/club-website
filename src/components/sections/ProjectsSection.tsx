@@ -39,14 +39,14 @@ export default function ProjectsSection() {
   };
 
   return (
-    <section id="projects" className="relative py-24 sm:py-32 bg-transparent overflow-hidden">
+    <section id="projects" className="relative py-16 sm:py-24 bg-transparent overflow-hidden">
       {/* Background Ambience */}
       <div className="absolute inset-0 cyber-grid-bg opacity-15 pointer-events-none" />
       <div className="absolute bottom-1/4 left-1/4 w-96 h-96 bg-violet-600/10 blur-[160px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-5 mb-8">
           <div className="space-y-3">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-violet-500/10 border border-violet-500/30 text-[11px] font-mono text-violet-300">
               <Sparkles className="w-3.5 h-3.5" />
@@ -134,7 +134,7 @@ export default function ProjectsSection() {
               </div>
 
               {/* Card Body */}
-              <div className="p-6 flex-1 flex flex-col justify-between space-y-4">
+              <div className="p-5 flex-1 flex flex-col justify-between gap-3">
                 <div>
                   <h3 className="text-lg font-bold text-white font-mono group-hover:text-cyan-300 transition-colors mb-1.5 line-clamp-1">
                     {project.title}

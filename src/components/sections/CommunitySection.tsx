@@ -65,14 +65,14 @@ export default function CommunitySection() {
   ];
 
   return (
-    <section className="relative py-24 sm:py-32 bg-transparent overflow-hidden">
+    <section className="relative py-16 sm:py-24 bg-transparent overflow-hidden">
       {/* Background Ambience */}
       <div className="absolute inset-0 cyber-grid-bg opacity-20 pointer-events-none" />
       <div className="absolute top-1/2 right-1/3 w-96 h-96 bg-cyan-600/10 blur-[150px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
+        <div className="text-center max-w-3xl mx-auto mb-10 space-y-3">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-[11px] font-mono text-cyan-300">
             <Sparkles className="w-3.5 h-3.5" />
             <span>GLOBAL STUDENT NETWORK</span>
@@ -91,7 +91,7 @@ export default function CommunitySection() {
         </div>
 
         {/* Social Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-10">
           {socials.map((soc, idx) => {
             const Icon = soc.icon;
             return (
@@ -106,7 +106,7 @@ export default function CommunitySection() {
                 transition={{ duration: 0.4, delay: idx * 0.1 }}
                 onMouseEnter={() => soundFx.playHover()}
                 onClick={() => soundFx.playClick()}
-                className={`p-6 rounded-3xl bg-[#111111]/85 backdrop-blur-md border border-white/10 ${soc.glow} transition-all duration-300 flex flex-col justify-between group transform hover:-translate-y-1`}
+                className={`p-5 rounded-2xl bg-[#111111]/85 backdrop-blur-md border border-white/10 ${soc.glow} transition-all duration-300 flex flex-col justify-between group transform hover:-translate-y-1`}
               >
                 <div>
                   <div className="flex items-center justify-between mb-4">
@@ -143,7 +143,7 @@ export default function CommunitySection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4, delay: 0.5 }}
-            className="p-6 rounded-3xl bg-gradient-to-br from-cyan-950/60 via-slate-900 to-violet-950/60 border border-cyan-500/40 flex flex-col justify-between"
+            className="p-5 rounded-2xl bg-gradient-to-br from-cyan-950/60 via-slate-900 to-violet-950/60 border border-cyan-500/40 flex flex-col justify-between"
           >
             <div>
               <div className="w-12 h-12 rounded-2xl bg-cyan-500/20 border border-cyan-400 flex items-center justify-center text-cyan-300 mb-4 shadow-none">

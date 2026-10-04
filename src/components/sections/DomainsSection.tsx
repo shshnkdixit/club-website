@@ -45,14 +45,14 @@ export default function DomainsSection() {
   };
 
   return (
-    <section id="domains" className="relative py-24 sm:py-32 bg-transparent overflow-hidden">
+    <section id="domains" className="relative py-16 sm:py-24 bg-transparent overflow-hidden">
       {/* Background Grid */}
       <div className="absolute inset-0 cyber-grid-bg opacity-20 pointer-events-none" />
       <div className="absolute top-1/3 right-0 w-96 h-96 bg-cyan-600/10 blur-[150px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-5 mb-10">
           <div className="space-y-3">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-[11px] font-mono text-cyan-300">
               <Cpu className="w-3.5 h-3.5" />
@@ -80,7 +80,7 @@ export default function DomainsSection() {
         </div>
 
         {/* 10 Domains 3D Glass Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 sm:gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-3 sm:gap-4">
           {domains.map((domain, idx) => {
             const IconComponent = ICON_MAP[domain.iconName] || Cpu;
             return (

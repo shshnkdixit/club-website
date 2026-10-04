@@ -29,14 +29,14 @@ export default function ResearchSection() {
   };
 
   return (
-    <section id="research" className="relative py-24 sm:py-32 bg-transparent overflow-hidden">
+    <section id="research" className="relative py-16 sm:py-24 bg-transparent overflow-hidden">
       {/* Background Ambience */}
       <div className="absolute inset-0 cyber-grid-bg opacity-15 pointer-events-none" />
       <div className="absolute top-1/3 left-1/3 w-96 h-96 bg-cyan-600/10 blur-[150px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-5 mb-10">
           <div className="space-y-3">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-[11px] font-mono text-cyan-300">
               <BookMarked className="w-3.5 h-3.5" />
@@ -64,7 +64,7 @@ export default function ResearchSection() {
         </div>
 
         {/* Papers Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {research.map((paper, idx) => (
             <motion.div
               key={paper.id}
@@ -74,7 +74,7 @@ export default function ResearchSection() {
               transition={{ duration: 0.4, delay: idx * 0.1 }}
               onClick={() => handleOpenPaper(paper)}
               onMouseEnter={() => soundFx.playHover()}
-              className="group cursor-pointer p-6 sm:p-7 rounded-3xl bg-[#111111]/85 backdrop-blur-md border border-white/10 hover:border-white/25 shadow-[0_4px_25px_rgba(0,0,0,0.3)] hover:shadow-none transition-all flex flex-col justify-between transform hover:-translate-y-1"
+              className="group cursor-pointer p-5 sm:p-6 rounded-2xl bg-[#111111]/85 backdrop-blur-md border border-white/10 hover:border-white/25 shadow-[0_4px_25px_rgba(0,0,0,0.3)] hover:shadow-none transition-all flex flex-col justify-between transform hover:-translate-y-1"
             >
               <div>
                 {/* Status & Conference */}
