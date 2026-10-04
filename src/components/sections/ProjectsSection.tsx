@@ -97,7 +97,7 @@ export default function ProjectsSection() {
         </div>
 
         {/* Project Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+        <div className="flex flex-col gap-2 rounded-2xl border border-white/10 bg-[#0b0b0b]/80 p-2">
           {filteredProjects.map((project, idx) => (
             <motion.div
               key={project.id}
@@ -105,7 +105,7 @@ export default function ProjectsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: idx * 0.1 }}
-              className="group rounded-3xl bg-[#0a0a0a]/80 backdrop-blur-md border border-cyan-500/20 hover:border-cyan-400/60 shadow-[0_4px_25px_rgba(0,0,0,0.4)] hover:shadow-none transition-all duration-300 flex flex-col overflow-hidden transform hover:-translate-y-1.5"
+              className="group rounded-xl bg-[#151515]/90 border border-white/10 hover:border-white/25 transition-colors duration-200 flex flex-col sm:flex-row overflow-hidden cursor-pointer"
             >
               {/* Project Image & Interactive Simulator Banner */}
               <div className="relative h-48 w-full overflow-hidden bg-slate-950">
@@ -139,7 +139,7 @@ export default function ProjectsSection() {
                   <h3 className="text-lg font-bold text-white font-mono group-hover:text-cyan-300 transition-colors mb-1.5 line-clamp-1">
                     {project.title}
                   </h3>
-                  <p className="text-xs text-slate-300 font-sans line-clamp-2 leading-relaxed mb-3">
+                  <p className="hidden text-xs text-slate-300 font-sans line-clamp-2 leading-relaxed mb-3">
                     {project.description}
                   </p>
 

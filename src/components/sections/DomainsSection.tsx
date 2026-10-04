@@ -80,7 +80,7 @@ export default function DomainsSection() {
         </div>
 
         {/* 10 Domains 3D Glass Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-3 sm:gap-4">
+        <div className="flex flex-col gap-2 rounded-2xl border border-white/10 bg-[#0b0b0b]/80 p-2">
           {domains.map((domain, idx) => {
             const IconComponent = ICON_MAP[domain.iconName] || Cpu;
             return (
@@ -94,7 +94,7 @@ export default function DomainsSection() {
                 <div
                   onClick={() => handleOpenDomain(domain)}
                   onMouseEnter={() => soundFx.playHover()}
-                  className="h-full group cursor-pointer p-5 rounded-2xl bg-[#111111]/85 backdrop-blur-md border border-white/10 hover:border-white/25 shadow-[0_4px_20px_rgba(0,0,0,0.3)] hover:shadow-none transition-all duration-300 flex flex-col justify-between transform hover:-translate-y-1.5"
+                  className="h-full group cursor-pointer p-3 sm:p-4 rounded-xl bg-[#151515]/90 border border-white/10 hover:border-white/25 transition-colors duration-200 flex flex-row items-center gap-3"
                 >
                   <div>
                     {/* Icon & Active Count */}
@@ -114,7 +114,7 @@ export default function DomainsSection() {
                       {domain.name}
                     </h3>
 
-                    <p className="text-xs text-slate-300 font-sans line-clamp-3 mb-4 leading-relaxed">
+                    <p className="hidden text-xs text-slate-300 font-sans line-clamp-3 mb-4 leading-relaxed">
                       {domain.shortDesc}
                     </p>
                   </div>

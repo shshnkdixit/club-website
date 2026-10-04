@@ -54,7 +54,7 @@ export default function TeamSection() {
         </div>
 
         {/* Team Holographic Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+        <div className="flex flex-col gap-2 rounded-2xl border border-white/10 bg-[#0b0b0b]/80 p-2">
           {team.map((member, idx) => (
             <motion.div
               key={member.id}
@@ -64,7 +64,7 @@ export default function TeamSection() {
               transition={{ duration: 0.4, delay: idx * 0.1 }}
               onClick={() => handleOpenMember(member)}
               onMouseEnter={() => soundFx.playHover()}
-              className="group cursor-pointer p-5 rounded-2xl bg-[#111111]/85 backdrop-blur-md border border-white/10 hover:border-white/25 shadow-[0_4px_25px_rgba(0,0,0,0.3)] hover:shadow-none transition-all flex flex-col justify-between transform hover:-translate-y-1.5"
+              className="group cursor-pointer p-3 sm:p-4 rounded-xl bg-[#151515]/90 border border-white/10 hover:border-white/25 transition-colors flex flex-row items-center gap-3"
             >
               <div>
                 {/* Avatar & Role Header */}
@@ -86,7 +86,7 @@ export default function TeamSection() {
                   </div>
                 </div>
 
-                <p className="text-xs text-slate-300 font-sans line-clamp-3 leading-relaxed mb-4">
+                <p className="hidden text-xs text-slate-300 font-sans line-clamp-3 leading-relaxed mb-4">
                   {member.bio}
                 </p>
 

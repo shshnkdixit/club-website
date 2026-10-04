@@ -64,7 +64,7 @@ export default function ResearchSection() {
         </div>
 
         {/* Papers Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="flex flex-col gap-2 rounded-2xl border border-white/10 bg-[#0b0b0b]/80 p-2">
           {research.map((paper, idx) => (
             <motion.div
               key={paper.id}
@@ -74,7 +74,7 @@ export default function ResearchSection() {
               transition={{ duration: 0.4, delay: idx * 0.1 }}
               onClick={() => handleOpenPaper(paper)}
               onMouseEnter={() => soundFx.playHover()}
-              className="group cursor-pointer p-5 sm:p-6 rounded-2xl bg-[#111111]/85 backdrop-blur-md border border-white/10 hover:border-white/25 shadow-[0_4px_25px_rgba(0,0,0,0.3)] hover:shadow-none transition-all flex flex-col justify-between transform hover:-translate-y-1"
+              className="group cursor-pointer p-3 sm:p-4 rounded-xl bg-[#151515]/90 border border-white/10 hover:border-white/25 transition-colors flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2"
             >
               <div>
                 {/* Status & Conference */}
@@ -104,7 +104,7 @@ export default function ResearchSection() {
                   Authors: <span className="text-slate-300">{paper.authors.join(', ')}</span>
                 </p>
 
-                <p className="text-xs text-slate-300 font-sans line-clamp-3 leading-relaxed mb-4">
+                <p className="hidden text-xs text-slate-300 font-sans line-clamp-3 leading-relaxed mb-4">
                   {paper.abstract}
                 </p>
               </div>
