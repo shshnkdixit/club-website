@@ -9,20 +9,27 @@ import { useCMSData } from '@/lib/cmsStore';
 import { soundFx } from '@/lib/soundFx';
 
 function ResearchSignal() {
+  const nodes = [
+    { className: 'left-[17%] top-[25%]', tone: 'bg-cyan-300' },
+    { className: 'left-[12%] top-[61%]', tone: 'bg-emerald-300' },
+    { className: 'left-[38%] top-[10%]', tone: 'bg-cyan-200' },
+    { className: 'right-[13%] top-[22%]', tone: 'bg-emerald-300' },
+    { className: 'right-[9%] top-[62%]', tone: 'bg-cyan-300' },
+    { className: 'left-[38%] bottom-[9%]', tone: 'bg-emerald-200' },
+    { className: 'left-[7%] top-[42%]', tone: 'bg-cyan-200' },
+  ];
+
   return (
-    <div className="relative mx-auto aspect-square w-full max-w-[360px]" role="img" aria-label="Research signal visualization">
-      <div className="absolute inset-[10%] rounded-full border border-cyan-400/25" />
-      <div className="absolute inset-[22%] rounded-full border border-emerald-300/20" />
-      <div className="absolute inset-[35%] rounded-full border border-cyan-400/20" />
-      <div className="absolute left-1/2 top-1/2 h-px w-[76%] -translate-x-1/2 -translate-y-1/2 rotate-[24deg] bg-gradient-to-r from-transparent via-cyan-300/60 to-transparent" />
-      <div className="absolute left-1/2 top-1/2 h-px w-[72%] -translate-x-1/2 -translate-y-1/2 -rotate-[38deg] bg-gradient-to-r from-transparent via-emerald-300/45 to-transparent" />
-      <div className="absolute left-[18%] top-[28%] size-2 rounded-full bg-cyan-300 shadow-[0_0_16px_rgba(103,232,249,0.9)]" />
-      <div className="absolute right-[19%] top-[21%] size-1.5 rounded-full bg-emerald-300 shadow-[0_0_14px_rgba(110,231,183,0.8)]" />
-      <div className="absolute bottom-[23%] left-[24%] size-1.5 rounded-full bg-cyan-200 shadow-[0_0_14px_rgba(103,232,249,0.7)]" />
-      <div className="absolute bottom-[18%] right-[24%] size-2 rounded-full bg-cyan-300 shadow-[0_0_16px_rgba(103,232,249,0.8)]" />
-      <div className="absolute left-1/2 top-1/2 size-3 -translate-x-1/2 -translate-y-1/2 rounded-full bg-emerald-300 shadow-[0_0_26px_rgba(110,231,183,0.9)]" />
-      <span className="absolute left-1/2 top-[3%] -translate-x-1/2 font-mono text-[9px] tracking-[0.28em] text-cyan-300/60">SIGNAL / 01</span>
-      <span className="absolute bottom-[3%] left-1/2 -translate-x-1/2 font-mono text-[9px] tracking-[0.28em] text-slate-500">OBSERVATORY</span>
+    <div className="relative mx-auto aspect-[1.2/1] w-full max-w-[330px]" role="img" aria-label="Research signal network visualization">
+      <span className="absolute left-0 top-0 font-mono text-[9px] tracking-[0.24em] text-slate-500">RESEARCH SIGNAL / 01</span>
+      <div className="absolute inset-x-[12%] top-1/2 h-px rotate-[19deg] bg-gradient-to-r from-transparent via-cyan-300/35 to-transparent" />
+      <div className="absolute inset-x-[10%] top-1/2 h-px -rotate-[29deg] bg-gradient-to-r from-transparent via-emerald-300/30 to-transparent" />
+      <div className="absolute left-[18%] top-[35%] h-px w-[64%] rotate-[7deg] bg-cyan-300/20" />
+      <div className="absolute left-[39%] top-[14%] h-[72%] w-px rotate-[34deg] bg-emerald-300/20" />
+      {nodes.map((node) => <span key={node.className} className={`absolute size-1.5 rounded-full ${node.tone} shadow-[0_0_12px_currentColor]`} style={{ color: node.tone.includes('emerald') ? '#6ee7b7' : '#67e8f9' }} />)}
+      <div className="absolute left-1/2 top-1/2 size-7 -translate-x-1/2 -translate-y-1/2 rounded-full border border-emerald-300/70 bg-emerald-300/10 shadow-[0_0_24px_rgba(110,231,183,0.45)] motion-safe:animate-pulse" />
+      <div className="absolute left-1/2 top-1/2 size-2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-emerald-200" />
+      <span className="absolute bottom-0 right-0 font-mono text-[9px] tracking-[0.24em] text-slate-600">CONNECTED / 07 NODES</span>
     </div>
   );
 }
@@ -62,7 +69,7 @@ export default function ResearchSection() {
           <Link href="/research" onClick={() => soundFx.playClick()} className="group inline-flex items-center gap-2 self-start font-mono text-xs uppercase tracking-[0.14em] text-cyan-400 transition-colors hover:text-cyan-300 md:self-auto">All Publications <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" /></Link>
         </header>
 
-        {featured && <motion.div initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-10 border-y border-cyan-400/20 py-8 sm:py-10"><div className="grid items-center gap-10 lg:grid-cols-[1.2fr_0.8fr] lg:gap-16"><div><div className="mb-5 flex items-center gap-3 font-mono text-[10px] uppercase tracking-[0.24em] text-emerald-300"><span className="size-1.5 rounded-full bg-emerald-300 shadow-[0_0_10px_rgba(110,231,183,0.9)]" />Active Research</div><h3 className="mb-4 max-w-3xl font-mono text-2xl font-bold leading-tight text-white sm:text-4xl">{featured.title}</h3><p className="mb-3 font-mono text-xs text-slate-400">{featured.authors.join(' · ')}</p><p className="mb-6 max-w-2xl font-sans text-sm leading-relaxed text-slate-300">{featured.abstract}</p><div className="mb-7 flex flex-wrap gap-2">{featured.keywords.map((keyword) => <span key={keyword} className="border border-slate-700 bg-slate-950/60 px-2.5 py-1 font-mono text-[10px] text-slate-400">{keyword}</span>)}</div><button type="button" onClick={() => openPaper(featured)} className="group inline-flex items-center gap-2 border border-cyan-400/50 px-4 py-2.5 font-mono text-[11px] font-bold uppercase tracking-[0.14em] text-cyan-300 transition-colors hover:bg-cyan-400/10">Read Paper <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-1" /></button></div><ResearchSignal /></div></motion.div>}
+        {featured && <motion.div initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-10 border-y border-cyan-400/20 py-8 sm:py-10"><div className="grid items-center gap-10 lg:grid-cols-[1.2fr_0.8fr] lg:gap-16"><div><div className="mb-5 flex items-center gap-3 font-mono text-[10px] uppercase tracking-[0.24em] text-emerald-300"><span className="size-1.5 rounded-full bg-emerald-300 shadow-[0_0_10px_rgba(110,231,183,0.9)]" />Featured Research</div><h3 className="mb-4 max-w-3xl font-mono text-2xl font-bold leading-tight text-white sm:text-4xl">{featured.title}</h3><p className="mb-3 font-mono text-xs text-slate-400">{featured.authors.join(' · ')}</p><p className="mb-6 max-w-2xl font-sans text-sm leading-relaxed text-slate-300">{featured.abstract}</p><div className="mb-7 flex flex-wrap gap-2">{featured.keywords.map((keyword) => <span key={keyword} className="border border-slate-700 bg-slate-950/60 px-2.5 py-1 font-mono text-[10px] text-slate-400">{keyword}</span>)}</div><button type="button" onClick={() => openPaper(featured)} className="group inline-flex items-center gap-2 border border-cyan-400/50 px-4 py-2.5 font-mono text-[11px] font-bold uppercase tracking-[0.14em] text-cyan-300 transition-colors hover:bg-cyan-400/10">Read Paper <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-1" /></button></div><ResearchSignal /></div><div className="mt-8 flex flex-wrap items-center gap-x-4 gap-y-2 border-t border-slate-800/80 pt-4 font-mono text-[10px] uppercase tracking-[0.16em] text-slate-500"><span>01</span><span className="text-slate-700">/</span><span>{featured.domain}</span><span className="text-slate-700">/</span><span>{featured.year}</span><span className="text-slate-700">/</span><span>Research Paper</span></div></motion.div>}
 
         <nav aria-label="Research areas" className="mb-12 grid grid-cols-2 border-y border-slate-800/80 sm:grid-cols-4">{['Computer Vision', 'AI Agents', 'Robotics', 'Generative AI'].map((area, index) => <a key={area} href="#research-publications" className="group border-slate-800/80 px-3 py-4 font-mono text-[10px] uppercase tracking-[0.12em] text-slate-500 transition-colors hover:bg-cyan-400/5 hover:text-cyan-300 sm:border-r sm:px-5 sm:last:border-r-0"><span className="mr-2 text-cyan-400/70">0{index + 1}</span>{area}<ArrowRight className="ml-2 inline-block size-3 opacity-0 transition-all group-hover:translate-x-1 group-hover:opacity-100" /></a>)}</nav>
 
