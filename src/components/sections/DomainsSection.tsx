@@ -94,7 +94,7 @@ export default function DomainsSection() {
                 <div
                   onClick={() => handleOpenDomain(domain)}
                   onMouseEnter={() => soundFx.playHover()}
-                  className="h-full group cursor-pointer p-5 rounded-2xl bg-[#0a0a0a]/75 backdrop-blur-md border border-cyan-500/20 hover:border-cyan-400/60 shadow-[0_4px_20px_rgba(0,0,0,0.3)] hover:shadow-none transition-all duration-300 flex flex-col justify-between transform hover:-translate-y-1.5"
+                  className="h-full group cursor-pointer p-5 rounded-2xl bg-[#111111]/85 backdrop-blur-md border border-white/10 hover:border-white/25 shadow-[0_4px_20px_rgba(0,0,0,0.3)] hover:shadow-none transition-all duration-300 flex flex-col justify-between transform hover:-translate-y-1.5"
                 >
                   <div>
                     {/* Icon & Active Count */}

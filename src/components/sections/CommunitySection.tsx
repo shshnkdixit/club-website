@@ -106,7 +106,7 @@ export default function CommunitySection() {
                 transition={{ duration: 0.4, delay: idx * 0.1 }}
                 onMouseEnter={() => soundFx.playHover()}
                 onClick={() => soundFx.playClick()}
-                className={`p-6 rounded-3xl bg-[#0a0a0a]/80 backdrop-blur-md border border-cyan-500/20 ${soc.glow} transition-all duration-300 flex flex-col justify-between group transform hover:-translate-y-1`}
+                className={`p-6 rounded-3xl bg-[#111111]/85 backdrop-blur-md border border-white/10 ${soc.glow} transition-all duration-300 flex flex-col justify-between group transform hover:-translate-y-1`}
               >
                 <div>
                   <div className="flex items-center justify-between mb-4">

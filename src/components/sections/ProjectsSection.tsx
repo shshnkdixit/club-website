@@ -86,7 +86,7 @@ export default function ProjectsSection() {
                 }}
                 className={`px-4 py-2 rounded-xl transition-all whitespace-nowrap border ${
                   isSelected
-                    ? 'bg-cyan-500/20 text-cyan-300 border-cyan-400 font-bold shadow-none'
+                    ? 'bg-white/[0.08] text-neutral-200 border-white/25 font-bold shadow-none'
                     : 'bg-slate-900/60 text-slate-400 border-slate-800 hover:border-slate-700 hover:text-slate-200'
                 }`}
               >

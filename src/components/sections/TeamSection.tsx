@@ -64,7 +64,7 @@ export default function TeamSection() {
               transition={{ duration: 0.4, delay: idx * 0.1 }}
               onClick={() => handleOpenMember(member)}
               onMouseEnter={() => soundFx.playHover()}
-              className="group cursor-pointer p-6 rounded-3xl bg-[#0a0a0a]/80 backdrop-blur-md border border-cyan-500/20 hover:border-cyan-400/60 shadow-[0_4px_25px_rgba(0,0,0,0.3)] hover:shadow-none transition-all flex flex-col justify-between transform hover:-translate-y-1.5"
+              className="group cursor-pointer p-6 rounded-3xl bg-[#111111]/85 backdrop-blur-md border border-white/10 hover:border-white/25 shadow-[0_4px_25px_rgba(0,0,0,0.3)] hover:shadow-none transition-all flex flex-col justify-between transform hover:-translate-y-1.5"
             >
               <div>
                 {/* Avatar & Role Header */}
